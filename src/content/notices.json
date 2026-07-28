@@ -1,0 +1,23 @@
+[
+  {
+    "id": "not-1",
+    "tag": "Urgent",
+    "title": "Fresher Induction Week Registration Open",
+    "date": "2026-07-27",
+    "body": "Welcome freshers to College of Engineering Karunagappally! Registration for the µLearn KNP induction bootcamps and Discord onboarding is now live. Complete your Level 1 tasks to earn your first 100 Karma points."
+  },
+  {
+    "id": "not-2",
+    "tag": "Opportunity",
+    "title": "Call for Sub-Executive Committee Applications",
+    "date": "2026-07-24",
+    "body": "Looking to take up leadership positions? Applications are open for Interest Group leads (Web, Cyber, AI/ML, Design) and Operations Leads for the 2026-27 term."
+  },
+  {
+    "id": "not-3",
+    "tag": "Event",
+    "title": "Weekly Learning Circle Schedule Announced",
+    "date": "2026-07-20",
+    "body": "Learning Circles meet every Thursday at 4:30 PM. Group allocations for Web Dev and Cybersecurity have been posted on our official Discord server."
+  }
+]

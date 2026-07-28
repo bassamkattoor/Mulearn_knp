@@ -1,0 +1,65 @@
+[
+  {
+    "id": "lb-1",
+    "rank": 1,
+    "name": "Karthik R",
+    "avatar": "https://ui-avatars.com/api/?name=Karthik+R&background=a3e635&color=000&size=100",
+    "karma": 14250,
+    "rankChange": 2,
+    "ig": "Web Development"
+  },
+  {
+    "id": "lb-2",
+    "rank": 2,
+    "name": "Devika M",
+    "avatar": "https://ui-avatars.com/api/?name=Devika+M&background=3b82f6&color=fff&size=100",
+    "karma": 12800,
+    "rankChange": 0,
+    "ig": "UI/UX Design"
+  },
+  {
+    "id": "lb-3",
+    "rank": 3,
+    "name": "Abhinav S",
+    "avatar": "https://ui-avatars.com/api/?name=Abhinav+S&background=8b5cf6&color=fff&size=100",
+    "karma": 11400,
+    "rankChange": 1,
+    "ig": "Cybersecurity"
+  },
+  {
+    "id": "lb-4",
+    "rank": 4,
+    "name": "Siddharth P",
+    "avatar": "https://ui-avatars.com/api/?name=Siddharth+P&background=f59e0b&color=fff&size=100",
+    "karma": 9750,
+    "rankChange": -1,
+    "ig": "AI / ML"
+  },
+  {
+    "id": "lb-5",
+    "rank": 5,
+    "name": "Meera Krishna",
+    "avatar": "https://ui-avatars.com/api/?name=Meera+Krishna&background=ec4899&color=fff&size=100",
+    "karma": 9100,
+    "rankChange": 3,
+    "ig": "Cloud & DevOps"
+  },
+  {
+    "id": "lb-6",
+    "rank": 6,
+    "name": "Arjun Mohan",
+    "avatar": "https://ui-avatars.com/api/?name=Arjun+Mohan&background=10b981&color=fff&size=100",
+    "karma": 8450,
+    "rankChange": 0,
+    "ig": "IoT & Robotics"
+  },
+  {
+    "id": "lb-7",
+    "rank": 7,
+    "name": "Sneha Suresh",
+    "avatar": "https://ui-avatars.com/api/?name=Sneha+Suresh&background=6366f1&color=fff&size=100",
+    "karma": 7900,
+    "rankChange": -2,
+    "ig": "Game Development"
+  }
+]

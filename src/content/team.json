@@ -1,0 +1,66 @@
+[
+  {
+    "id": "team-1",
+    "name": "Abhinav S",
+    "role": "Campus Lead",
+    "department": "Computer Science & Engineering",
+    "year": "3rd Year",
+    "bio": "Passionate developer, open-source enthusiast, and driving force behind µLearn KNP's builder culture.",
+    "image": "https://ui-avatars.com/api/?name=Abhinav+S&background=8b5cf6&color=fff&size=200",
+    "socials": {
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com"
+    }
+  },
+  {
+    "id": "team-2",
+    "name": "Devika M",
+    "role": "Web Dev IG Lead",
+    "department": "Information Technology",
+    "year": "3rd Year",
+    "bio": "Frontend developer obsessed with UI/UX and building accessible web applications.",
+    "image": "https://ui-avatars.com/api/?name=Devika+M&background=3b82f6&color=fff&size=200",
+    "socials": {
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com"
+    }
+  },
+  {
+    "id": "team-3",
+    "name": "Rahul V",
+    "role": "Cybersecurity IG Lead",
+    "department": "Computer Science & Engineering",
+    "year": "4th Year",
+    "bio": "CTF player, ethical hacker, and security researcher mentoring student red teamers.",
+    "image": "https://ui-avatars.com/api/?name=Rahul+V&background=a3e635&color=000&size=200",
+    "socials": {
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com"
+    }
+  },
+  {
+    "id": "team-4",
+    "name": "Ananya Nair",
+    "role": "UI/UX IG Lead",
+    "department": "Electronics & Communication",
+    "year": "2nd Year",
+    "bio": "Figma wizard creating clean design systems and intuitive user interfaces.",
+    "image": "https://ui-avatars.com/api/?name=Ananya+Nair&background=ec4899&color=fff&size=200",
+    "socials": {
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com"
+    }
+  },
+  {
+    "id": "team-5",
+    "name": "Dr. Rajesh Kumar",
+    "role": "Faculty Anchor",
+    "department": "Computer Science Department",
+    "year": "Faculty",
+    "bio": "Providing institutional support, mentorship, and guidance for µLearn activities on campus.",
+    "image": "https://ui-avatars.com/api/?name=Rajesh+Kumar&background=64748b&color=fff&size=200",
+    "socials": {
+      "linkedin": "https://linkedin.com"
+    }
+  }
+]

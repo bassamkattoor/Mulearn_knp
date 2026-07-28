@@ -1,0 +1,26 @@
+{
+  "mulearnNational": "µLearn is a peer-to-peer learning community dedicated to empowering students to build real-world skills. By breaking traditional academic silos, µLearn fosters an environment where curiosity and execution take center stage.",
+  "cekStory": "µLearn KNP was founded at College of Engineering Karunagappally to provide students with a space to learn, build, and innovate together. We focus on hands-on proof of work, continuous skill progression, and domain exploration.",
+  "vision": "To create a thriving ecosystem of student builders at CEK who collaborate, master industry-relevant technologies, and lead impactful projects.",
+  "mission": "Bridge the gap between academic theory and practical implementation through peer learning circles, gamified skill levels, and active interest groups.",
+  "values": [
+    {
+      "title": "Collaboration",
+      "definition": "Learn together, build together, and elevate your peers."
+    },
+    {
+      "title": "Curiosity",
+      "definition": "Ask questions, explore emerging technologies, and solve real problems."
+    },
+    {
+      "title": "Community",
+      "definition": "Cultivate an open, welcoming network where proof of work defines growth."
+    }
+  ],
+  "stats": {
+    "members": 320,
+    "karmaEarned": 185000,
+    "eventsHeld": 28,
+    "activeIGs": 10
+  }
+}
