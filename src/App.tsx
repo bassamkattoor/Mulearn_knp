@@ -7,6 +7,7 @@ import Events from './pages/Events';
 import NoticeBoard from './pages/NoticeBoard';
 import Leaderboard from './pages/Leaderboard';
 import Join from './pages/Join';
+import Theory from './pages/Theory';
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
             <Route path="/notice-board" element={<NoticeBoard />} />
             <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/join" element={<Join />} />
+            <Route path="/theory" element={<Theory />} />
           </Routes>
         </main>
       </div>
