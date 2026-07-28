@@ -72,24 +72,38 @@ export default function Leaderboard() {
           </div>
 
           {/* How karma works */}
-          <div className="glass-card p-6 rounded-2xl border border-indigo-500/20 mt-8 space-y-3">
+          <div className="glass-card p-6 rounded-2xl border border-indigo-500/20 mt-8 space-y-4">
             <div className="flex items-center space-x-2">
               <Info className="w-4 h-4 text-indigo-400 shrink-0" />
               <h4 className="font-display font-bold text-white text-sm">How Karma Works</h4>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Karma on µLearn is <span className="text-slate-200 font-medium">proof of work</span> — not attendance or certificates.
+              You earn points by completing hands-on <span className="text-slate-200 font-medium">tasks</span> assigned within the platform,
+              submitting verifiable proof (GitHub repos, design files, screenshots), and having your work validated.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {[
-                { action: 'GitHub Commit', pts: '+10' },
-                { action: 'Publish Article', pts: '+50' },
-                { action: 'Peer Review', pts: '+30' },
-                { action: 'Host Session', pts: '+100' },
-              ].map((k, i) => (
-                <div key={i} className="bg-slate-900/60 rounded-xl p-3 border border-slate-800">
-                  <p className="font-display font-black text-lime-400 text-base">{k.pts}</p>
-                  <p className="text-[10px] text-slate-500 leading-tight mt-1">{k.action}</p>
+                { icon: '📋', title: 'Complete Tasks', desc: 'Pick tasks from your Interest Group — from enablement basics to advanced skill challenges.' },
+                { icon: '🔗', title: 'Submit Proof', desc: 'Share your work link on Discord or the µLearn dashboard for verification.' },
+                { icon: '⚡', title: 'Earn Karma', desc: 'Points are credited once your submission is verified. More tasks = more karma.' },
+              ].map((step, i) => (
+                <div key={i} className="bg-slate-900/60 rounded-xl p-3 border border-slate-800 space-y-1">
+                  <span className="text-xl">{step.icon}</span>
+                  <p className="font-display font-bold text-white text-xs">{step.title}</p>
+                  <p className="text-[10px] text-slate-500 leading-relaxed">{step.desc}</p>
                 </div>
               ))}
             </div>
+            <a
+              href="https://mulearn.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-1.5 text-[11px] text-indigo-400 hover:text-indigo-300 transition-colors font-medium"
+            >
+              <span>Explore tasks on mulearn.org</span>
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
           </div>
         </div>
       </main>
