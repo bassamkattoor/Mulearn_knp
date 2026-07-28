@@ -4,18 +4,21 @@ import SectionHeader from '../components/layout/SectionHeader';
 import MemberCard from '../components/ui/MemberCard';
 import teamData from '../content/team.json';
 import type { Member } from '../types';
+import { Star } from 'lucide-react';
 
 export default function Execom() {
-  const leads = (teamData as Member[]).filter(m => m.year !== 'Faculty');
-  const faculty = (teamData as Member[]).filter(m => m.year === 'Faculty');
+  const all = teamData as Member[];
+  const faculty = all.filter(m => m.year === 'Faculty');
+  const coreLeads = all.filter(m => ['Campus Lead', 'Campus Co-Lead', 'Tech Lead'].includes(m.role));
+  const otherLeads = all.filter(m => !['Campus Lead', 'Campus Co-Lead', 'Tech Lead'].includes(m.role) && m.year !== 'Faculty');
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-textMain pt-20">
+    <div className="min-h-screen flex flex-col bg-background text-textMain pt-14 sm:pt-20">
       <Navbar />
 
       <main className="flex-grow">
         {/* Hero */}
-        <section className="relative overflow-hidden py-24 text-center">
+        <section className="relative overflow-hidden py-16 sm:py-24 text-center">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-64 bg-indigo-700/20 rounded-full blur-[100px] pointer-events-none" />
           <div
             className="absolute inset-0 pointer-events-none"
@@ -29,7 +32,7 @@ export default function Execom() {
               <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
               <span>Leadership Team</span>
             </span>
-            <h1 className="text-5xl sm:text-7xl font-display font-black text-white tracking-tight leading-tight">
+            <h1 className="text-4xl sm:text-7xl font-display font-black text-white tracking-tight leading-tight">
               The people <br />
               <span className="gradient-text-animated">behind KNP.</span>
             </h1>
@@ -39,27 +42,58 @@ export default function Execom() {
           </div>
         </section>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 pb-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 pb-24">
 
-          {/* Student Leads */}
-          <section className="section-glow">
-            <SectionHeader eyebrow="Core Team" title="Student Executive Committee" centered />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {leads.map(m => <MemberCard key={m.id} member={m} />)}
-            </div>
-          </section>
-
-          {/* Faculty Anchor */}
-          {faculty.length > 0 && (
-            <section className="section-glow">
-              <SectionHeader eyebrow="Institutional Support" title="Faculty Anchor" centered />
+          {/* Campus Enabler — Featured at top */}
+          {faculty.map(m => (
+            <section key={m.id} className="section-glow">
+              <SectionHeader eyebrow="Institutional Support" title="Campus Enabler" centered />
               <div className="flex justify-center">
-                <div className="w-full max-w-sm">
-                  {faculty.map(m => <MemberCard key={m.id} member={m} />)}
+                <div className="relative glass-card rounded-3xl p-6 sm:p-8 border border-indigo-500/30 shadow-[0_0_40px_rgba(99,102,241,0.12)] max-w-sm w-full text-center">
+                  {/* Special badge */}
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center space-x-1.5 px-4 py-1 rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-[11px] font-bold shadow-lg shadow-indigo-600/30">
+                    <Star className="w-3 h-3" />
+                    <span>Faculty Guide</span>
+                  </div>
+                  <img
+                    src={m.image}
+                    alt={m.name}
+                    className="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-indigo-500/40 object-cover"
+                  />
+                  <h3 className="font-display font-black text-white text-xl">{m.name}</h3>
+                  <p className="text-indigo-400 font-semibold text-sm mt-1">{m.role}</p>
+                  <p className="text-slate-500 text-xs mt-0.5">{m.department}</p>
+                  <p className="text-slate-400 text-xs leading-relaxed mt-3 px-2">{m.bio}</p>
+                  {m.socials?.linkedin && (
+                    <a
+                      href={m.socials.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center space-x-1 mt-4 px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-700 text-xs text-slate-300 hover:border-indigo-500/40 hover:text-white transition-all"
+                    >
+                      <span>LinkedIn</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </section>
-          )}
+          ))}
+
+          {/* Core Leadership — Campus Lead, Co-Lead, Tech Lead */}
+          <section className="section-glow">
+            <SectionHeader eyebrow="Core Leadership" title="Campus Leads" centered />
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {coreLeads.map(m => <MemberCard key={m.id} member={m} />)}
+            </div>
+          </section>
+
+          {/* IG & Ops Leads */}
+          <section className="section-glow">
+            <SectionHeader eyebrow="Operations & Interest Groups" title="Executive Committee" centered />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {otherLeads.map(m => <MemberCard key={m.id} member={m} />)}
+            </div>
+          </section>
 
           {/* Open positions CTA */}
           <section className="glass-card p-8 sm:p-12 rounded-3xl border border-violet-500/20 text-center relative overflow-hidden">

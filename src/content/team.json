@@ -1,12 +1,24 @@
 [
   {
+    "id": "team-faculty",
+    "name": "Anju S",
+    "role": "Campus Enabler",
+    "department": "Assistant Professor",
+    "year": "Faculty",
+    "bio": "Providing institutional support, mentorship, and guidance for µLearn KNP activities at College of Engineering Karunagappally.",
+    "image": "https://ui-avatars.com/api/?name=Anju+S&background=6366f1&color=fff&size=200",
+    "socials": {
+      "linkedin": "https://linkedin.com"
+    }
+  },
+  {
     "id": "team-1",
-    "name": "Abhinav S",
+    "name": "Anita B Merin",
     "role": "Campus Lead",
     "department": "Computer Science & Engineering",
-    "year": "3rd Year",
-    "bio": "Passionate developer, open-source enthusiast, and driving force behind µLearn KNP's builder culture.",
-    "image": "https://ui-avatars.com/api/?name=Abhinav+S&background=8b5cf6&color=fff&size=200",
+    "year": "2nd Year",
+    "bio": "Driving the vision and culture of µLearn KNP on campus — building a community of doers, not just learners.",
+    "image": "https://ui-avatars.com/api/?name=Anita+B+Merin&background=8b5cf6&color=fff&size=200",
     "socials": {
       "linkedin": "https://linkedin.com",
       "github": "https://github.com"
@@ -14,12 +26,12 @@
   },
   {
     "id": "team-2",
-    "name": "Devika M",
-    "role": "Web Dev IG Lead",
-    "department": "Information Technology",
-    "year": "3rd Year",
-    "bio": "Frontend developer obsessed with UI/UX and building accessible web applications.",
-    "image": "https://ui-avatars.com/api/?name=Devika+M&background=3b82f6&color=fff&size=200",
+    "name": "Charutha A V",
+    "role": "Campus Co-Lead",
+    "department": "Artificial Intelligence & Data Science",
+    "year": "2nd Year",
+    "bio": "Co-piloting chapter operations and making sure every student has a path to build, learn, and grow.",
+    "image": "https://ui-avatars.com/api/?name=Charutha+AV&background=3b82f6&color=fff&size=200",
     "socials": {
       "linkedin": "https://linkedin.com",
       "github": "https://github.com"
@@ -27,12 +39,12 @@
   },
   {
     "id": "team-3",
-    "name": "Rahul V",
-    "role": "Cybersecurity IG Lead",
-    "department": "Computer Science & Engineering",
-    "year": "4th Year",
-    "bio": "CTF player, ethical hacker, and security researcher mentoring student red teamers.",
-    "image": "https://ui-avatars.com/api/?name=Rahul+V&background=a3e635&color=000&size=200",
+    "name": "Bassam Kattoor",
+    "role": "Tech Lead",
+    "department": "Bachelor of Computer Applications (Hons)",
+    "year": "2nd Year",
+    "bio": "Leading the technical direction of the chapter — from web infrastructure to developer tools and open-source projects.",
+    "image": "https://ui-avatars.com/api/?name=Bassam+Kattoor&background=a3e635&color=000&size=200",
     "socials": {
       "linkedin": "https://linkedin.com",
       "github": "https://github.com"
@@ -40,12 +52,12 @@
   },
   {
     "id": "team-4",
-    "name": "Ananya Nair",
-    "role": "UI/UX IG Lead",
-    "department": "Electronics & Communication",
-    "year": "2nd Year",
-    "bio": "Figma wizard creating clean design systems and intuitive user interfaces.",
-    "image": "https://ui-avatars.com/api/?name=Ananya+Nair&background=ec4899&color=fff&size=200",
+    "name": "Sourav S",
+    "role": "Creative Lead",
+    "department": "Artificial Intelligence & Data Science",
+    "year": "4th Year",
+    "bio": "Shaping the visual identity and creative direction of µLearn KNP — from event branding to social media.",
+    "image": "https://ui-avatars.com/api/?name=Sourav+S&background=ec4899&color=fff&size=200",
     "socials": {
       "linkedin": "https://linkedin.com",
       "github": "https://github.com"
@@ -53,14 +65,67 @@
   },
   {
     "id": "team-5",
-    "name": "Dr. Rajesh Kumar",
-    "role": "Faculty Anchor",
-    "department": "Computer Science Department",
-    "year": "Faculty",
-    "bio": "Providing institutional support, mentorship, and guidance for µLearn activities on campus.",
-    "image": "https://ui-avatars.com/api/?name=Rajesh+Kumar&background=64748b&color=fff&size=200",
+    "name": "Vishnu Mohanan",
+    "role": "Outreach Lead",
+    "department": "Computer Science & Engineering",
+    "year": "2nd Year",
+    "bio": "Connecting µLearn KNP with the wider student community — building bridges, spreading the word, and growing the chapter.",
+    "image": "https://ui-avatars.com/api/?name=Vishnu+Mohanan&background=f59e0b&color=fff&size=200",
     "socials": {
-      "linkedin": "https://linkedin.com"
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com"
+    }
+  },
+  {
+    "id": "team-6",
+    "name": "Souparnika S",
+    "role": "Student Coordinator Lead",
+    "department": "Computer Science & Engineering",
+    "year": "2nd Year",
+    "bio": "Keeping operations smooth and every member engaged — the backbone of day-to-day chapter coordination.",
+    "image": "https://ui-avatars.com/api/?name=Souparnika+S&background=10b981&color=fff&size=200",
+    "socials": {
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com"
+    }
+  },
+  {
+    "id": "team-7",
+    "name": "Sreehari H",
+    "role": "UI/UX IG Lead",
+    "department": "Computer Science & Engineering",
+    "year": "4th Year",
+    "bio": "Leading the UI/UX Interest Group — teaching design thinking, Figma, and building beautiful user experiences.",
+    "image": "https://ui-avatars.com/api/?name=Sreehari+H&background=06b6d4&color=fff&size=200",
+    "socials": {
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com"
+    }
+  },
+  {
+    "id": "team-8",
+    "name": "Akash Mohanan",
+    "role": "Web IG Lead",
+    "department": "Artificial Intelligence & Data Science",
+    "year": "2nd Year",
+    "bio": "Heading the Web Development Interest Group — from HTML basics to full-stack projects and proof-of-work submissions.",
+    "image": "https://ui-avatars.com/api/?name=Akash+Mohanan&background=7c3aed&color=fff&size=200",
+    "socials": {
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com"
+    }
+  },
+  {
+    "id": "team-9",
+    "name": "Sankar Santhosh",
+    "role": "Gaming IG Lead",
+    "department": "Bachelor of Computer Applications",
+    "year": "2nd Year",
+    "bio": "Leading the Gaming Interest Group — from game design fundamentals to building interactive experiences and game jams.",
+    "image": "https://ui-avatars.com/api/?name=Sankar+Santhosh&background=f97316&color=fff&size=200",
+    "socials": {
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com"
     }
   }
 ]
