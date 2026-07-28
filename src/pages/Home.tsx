@@ -98,36 +98,36 @@ export default function Home() {
               <motion.div
                 animate={{
                   rotate: [0, 360],
-                  scale: [1, 1.1, 1],
-                  opacity: [0.45, 0.8, 0.45],
+                  scale: [1, 1.12, 1],
+                  opacity: [0.45, 0.85, 0.45],
                 }}
                 transition={{
                   rotate: { duration: 10, repeat: Infinity, ease: "linear" },
                   scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
                   opacity: { duration: 4, repeat: Infinity, ease: "easeInOut" }
                 }}
-                className="absolute -inset-6 sm:-inset-8 bg-gradient-to-r from-purple-600 via-cyan-400 via-indigo-500 to-lime-400 rounded-full blur-3xl pointer-events-none"
+                className="absolute -inset-8 sm:-inset-12 bg-gradient-to-r from-purple-600 via-cyan-400 via-indigo-500 to-lime-400 rounded-full blur-3xl pointer-events-none"
               />
 
               {/* Orbiting Sparkle — top right */}
               <motion.div
-                animate={{ x: [0, 18, 0, -18, 0], y: [0, -14, 0, 14, 0], scale: [0.8, 1.3, 0.8] }}
+                animate={{ x: [0, 22, 0, -22, 0], y: [0, -18, 0, 18, 0], scale: [0.8, 1.3, 0.8] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 -right-4 z-30 p-1.5 bg-slate-950/90 rounded-full border border-lime-400/70 shadow-lg shadow-lime-500/20 text-lime-400"
+                className="absolute -top-6 -right-6 z-30 p-2 bg-slate-950/90 rounded-full border border-lime-400/70 shadow-lg shadow-lime-500/20 text-lime-400"
               >
-                <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 animate-pulse" />
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 animate-pulse" />
               </motion.div>
 
               {/* Orbiting Atom — bottom left */}
               <motion.div
-                animate={{ x: [0, -20, 0, 20, 0], y: [0, 12, 0, -12, 0], scale: [1, 0.75, 1] }}
+                animate={{ x: [0, -24, 0, 24, 0], y: [0, 16, 0, -16, 0], scale: [1, 0.75, 1] }}
                 transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-3 -left-4 z-30 p-1.5 bg-slate-950/90 rounded-full border border-cyan-400/70 shadow-lg shadow-cyan-500/20 text-cyan-400"
+                className="absolute -bottom-5 -left-6 z-30 p-2 bg-slate-950/90 rounded-full border border-cyan-400/70 shadow-lg shadow-cyan-500/20 text-cyan-400"
               >
-                <Atom className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <Atom className="w-4 h-4 sm:w-5 sm:h-5" />
               </motion.div>
 
-              {/* Free-Floating Logo — NO card background */}
+              {/* Free-Floating Logo — Bigger */}
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
@@ -136,7 +136,7 @@ export default function Home() {
                 <img
                   src="/mulearn-knp-logo-color.png"
                   alt="µLearn KNP Official Colorful Logo"
-                  className="h-28 sm:h-40 w-auto object-contain drop-shadow-[0_0_40px_rgba(124,58,237,0.55)]"
+                  className="h-36 sm:h-56 w-auto object-contain drop-shadow-[0_0_50px_rgba(124,58,237,0.65)]"
                 />
               </motion.div>
             </motion.div>
