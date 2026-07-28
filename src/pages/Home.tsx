@@ -58,11 +58,11 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-textMain overflow-x-hidden pt-20">
+    <div className="min-h-screen flex flex-col bg-background text-textMain overflow-x-hidden pt-16 sm:pt-20">
       <Navbar />
 
       {/* ====== HERO SECTION WITH OFFICIAL MULEARN CHARACTERS ====== */}
-      <section className="relative flex flex-col items-center justify-center pt-8 sm:pt-12 pb-0 overflow-hidden bg-gradient-to-b from-[#06060e] via-[#0b0c1b] to-background">
+      <section className="relative flex flex-col items-center justify-center pt-4 sm:pt-12 pb-0 overflow-hidden bg-gradient-to-b from-[#06060e] via-[#0b0c1b] to-background">
 
         {/* Animated Background Mesh Blobs */}
         <div className="mesh-gradient w-[650px] h-[650px] bg-violet-700/25 top-[-150px] left-[-200px]" style={{ animationDelay: '0s' }} />
@@ -82,7 +82,7 @@ export default function Home() {
         />
 
         {/* Hero Headline Content */}
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-8 pb-4">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-4 sm:space-y-8 pb-2 sm:pb-4">
 
           {/* Live Chapter Badge */}
           <div className="flex justify-center">
@@ -90,53 +90,56 @@ export default function Home() {
               href="https://mulearn.org"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-indigo-950/80 border border-indigo-500/30 backdrop-blur-md text-xs font-medium text-indigo-200 hover:border-indigo-400/60 hover:bg-indigo-900/60 transition-all group shadow-lg shadow-indigo-950/50"
+              className="inline-flex items-center space-x-1.5 sm:space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-indigo-950/80 border border-indigo-500/30 backdrop-blur-md text-[11px] sm:text-xs font-medium text-indigo-200 hover:border-indigo-400/60 hover:bg-indigo-900/60 transition-all group shadow-lg shadow-indigo-950/50 max-w-full"
             >
-              <span className="w-2 h-2 rounded-full bg-lime-400 animate-pulse" />
-              <span>µLearn KNP Campus Chapter • Karunagappally</span>
-              <ChevronRight className="w-3.5 h-3.5 text-indigo-400 group-hover:translate-x-0.5 transition-transform" />
+              <span className="w-2 h-2 rounded-full bg-lime-400 animate-pulse shrink-0" />
+              <span className="truncate">
+                <span className="sm:hidden">µLearn KNP • CE Karunagappally</span>
+                <span className="hidden sm:inline">µLearn KNP Campus Chapter • Karunagappally</span>
+              </span>
+              <ChevronRight className="w-3.5 h-3.5 text-indigo-400 group-hover:translate-x-0.5 transition-transform shrink-0" />
             </a>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-5xl sm:text-7xl lg:text-8xl font-display font-black leading-[1.08] tracking-tight text-white">
+          <h1 className="text-3xl sm:text-6xl lg:text-8xl font-display font-black leading-[1.1] tracking-tight text-white">
             Break the<br />
             <span className="gradient-text-animated">Echo Chamber.</span>
           </h1>
 
           {/* Sub headline */}
-          <p className="text-lg sm:text-2xl font-display font-semibold text-slate-300 tracking-tight">
+          <p className="text-base sm:text-2xl font-display font-semibold text-slate-300 tracking-tight">
             Build{' '}
             <span className="text-lime-400 font-bold">proof of work.</span>
             {' '}Not certificates.
           </p>
 
           {/* Description */}
-          <p className="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="text-xs sm:text-base text-slate-400 max-w-2xl mx-auto leading-relaxed font-normal px-2">
             The official peer-to-peer learning community at{' '}
             <span className="text-slate-200 font-medium">College of Engineering Karunagappally</span>.
             Master technology, level up your Karma, and build real projects with peers.
           </p>
 
           {/* Theory Badge */}
-          <div className="flex justify-center">
+          <div className="flex justify-center pt-1 sm:pt-0">
             <a
               href="https://selfdeterminationtheory.org/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-indigo-950/80 to-violet-950/80 border border-violet-500/25 text-xs font-medium text-slate-300 hover:border-violet-400/50 transition-all shadow-md"
+              className="inline-flex items-center space-x-2 px-3.5 py-1.5 sm:px-5 sm:py-2.5 rounded-full bg-gradient-to-r from-indigo-950/80 to-violet-950/80 border border-violet-500/25 text-[10px] sm:text-xs font-medium text-slate-300 hover:border-violet-400/50 transition-all shadow-md max-w-full"
             >
-              <Info className="w-4 h-4 text-sky-400 shrink-0" />
-              <span>Backed by Self-Determination Theory — Deci &amp; Ryan</span>
-              <ArrowRight className="w-3.5 h-3.5 text-indigo-400" />
+              <Info className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-sky-400 shrink-0" />
+              <span className="truncate">Backed by Self-Determination Theory — Deci &amp; Ryan</span>
+              <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-indigo-400 shrink-0" />
             </a>
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 pt-2 sm:pt-2">
             <Link
               to="/join"
-              className="btn-glow relative w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-bold text-base shadow-xl shadow-violet-600/30 flex items-center justify-center space-x-2.5 pulse-ring"
+              className="btn-glow relative w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-bold text-sm sm:text-base shadow-xl shadow-violet-600/30 flex items-center justify-center space-x-2.5 pulse-ring"
             >
               <span>Join µLearn KNP</span>
               <ArrowRight className="w-4 h-4" />
@@ -144,7 +147,7 @@ export default function Home() {
 
             <Link
               to="/about"
-              className="w-full sm:w-auto px-8 py-4 rounded-full border border-indigo-500/30 bg-surface/60 backdrop-blur-md text-slate-200 font-semibold text-base hover:border-indigo-400/60 hover:bg-surface/90 transition-all flex items-center justify-center space-x-2"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-full border border-indigo-500/30 bg-surface/60 backdrop-blur-md text-slate-200 font-semibold text-sm sm:text-base hover:border-indigo-400/60 hover:bg-surface/90 transition-all flex items-center justify-center space-x-2"
             >
               <Atom className="w-4 h-4 text-violet-400" />
               <span>Explore Chapter</span>
