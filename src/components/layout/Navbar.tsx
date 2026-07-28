@@ -21,14 +21,14 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-2xl bg-[#06060e]/85 border-b border-indigo-500/20 shadow-2xl transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="flex items-center justify-between h-20 sm:h-24">
 
           {/* Official µLearn OG Logo Container */}
           <Link to="/" className="flex items-center">
             <img
               src="/mulearn-knp-logo-white.png"
               alt="µLearn KNP"
-              className="h-14 sm:h-20 w-auto object-contain"
+              className="h-20 sm:h-32 w-auto object-contain"
             />
           </Link>
 

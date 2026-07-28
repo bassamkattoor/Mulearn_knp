@@ -59,7 +59,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-textMain overflow-x-hidden pt-16 sm:pt-20">
+    <div className="min-h-screen flex flex-col bg-background text-textMain overflow-x-hidden pt-20 sm:pt-24">
       <Navbar />
 
       {/* ====== HERO SECTION WITH OFFICIAL MULEARN CHARACTERS ====== */}
