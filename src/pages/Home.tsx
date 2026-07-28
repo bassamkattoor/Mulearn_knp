@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import {
   ArrowRight, Flame, Users, Compass, Award, Zap,
   Info, Atom, ChevronRight, Sparkles, Terminal
@@ -82,7 +83,48 @@ export default function Home() {
         />
 
         {/* Hero Headline Content */}
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-4 sm:space-y-8 pb-2 sm:pb-4">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-4 sm:space-y-6 pb-2 sm:pb-4">
+
+          {/* Big Motion Graphic Logo */}
+          <div className="flex flex-col items-center justify-center pt-1 pb-1">
+            <motion.div
+              initial={{ opacity: 0, y: -20, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="relative group"
+            >
+              {/* Dynamic Animated Ambient Glow Ring */}
+              <motion.div
+                animate={{
+                  scale: [1, 1.06, 1],
+                  opacity: [0.3, 0.65, 0.3],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="absolute -inset-3 bg-gradient-to-r from-violet-600 via-indigo-500 to-emerald-400 rounded-3xl blur-2xl pointer-events-none opacity-50"
+              />
+
+              {/* Floating Logo Container */}
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="relative px-6 py-2.5 sm:px-10 sm:py-3.5 bg-[#080816]/90 rounded-3xl border border-indigo-500/30 shadow-2xl backdrop-blur-xl flex items-center justify-center"
+              >
+                <img
+                  src="/mulearn-knp-logo-white.png"
+                  alt="µLearn KNP Logo"
+                  className="h-14 sm:h-24 w-auto object-contain drop-shadow-[0_0_25px_rgba(124,58,237,0.6)]"
+                />
+              </motion.div>
+            </motion.div>
+          </div>
 
           {/* Live Chapter Badge */}
           <div className="flex justify-center">
