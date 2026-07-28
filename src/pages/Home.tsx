@@ -59,84 +59,83 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-textMain overflow-x-hidden pt-20 sm:pt-24">
+    <div className="min-h-screen flex flex-col bg-background text-textMain overflow-x-hidden pt-14 sm:pt-20">
       <Navbar />
 
       {/* ====== HERO SECTION WITH OFFICIAL MULEARN CHARACTERS ====== */}
-      <section className="relative flex flex-col items-center justify-center pt-4 sm:pt-12 pb-0 overflow-hidden bg-gradient-to-b from-[#06060e] via-[#0b0c1b] to-background">
+      <section className="relative flex flex-col items-center justify-center pt-2 sm:pt-8 pb-0 overflow-hidden bg-gradient-to-b from-[#06060e] via-[#0b0c1b] to-background">
 
         {/* Animated Background Mesh Blobs */}
-        <div className="mesh-gradient w-[650px] h-[650px] bg-violet-700/25 top-[-150px] left-[-200px]" style={{ animationDelay: '0s' }} />
-        <div className="mesh-gradient w-[550px] h-[550px] bg-blue-600/20 top-[80px] right-[-180px]" style={{ animationDelay: '-4s' }} />
-        <div className="mesh-gradient w-[450px] h-[450px] bg-indigo-600/20 bottom-[100px] left-[50%] translate-x-[-50%]" style={{ animationDelay: '-8s' }} />
+        <div className="mesh-gradient w-[350px] h-[350px] sm:w-[650px] sm:h-[650px] bg-violet-700/20 top-[-100px] left-[-150px]" style={{ animationDelay: '0s' }} />
+        <div className="mesh-gradient w-[300px] h-[300px] sm:w-[550px] sm:h-[550px] bg-blue-600/15 top-[80px] right-[-140px]" style={{ animationDelay: '-4s' }} />
 
         {/* Subtle grid pattern overlay */}
         <div
-          className="absolute inset-0 pointer-events-none opacity-40"
+          className="absolute inset-0 pointer-events-none opacity-30"
           style={{
             backgroundImage: `
               linear-gradient(rgba(124,58,237,0.08) 1px, transparent 1px),
               linear-gradient(90deg, rgba(124,58,237,0.08) 1px, transparent 1px)
             `,
-            backgroundSize: '64px 64px',
+            backgroundSize: '48px 48px',
           }}
         />
 
         {/* Hero Headline Content */}
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-4 sm:space-y-6 pb-2 sm:pb-4">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-3 sm:space-y-6 pb-2 sm:pb-4">
 
           {/* Mind-Blowing Free-Floating Colorful Motion Graphic Logo */}
-          <div className="flex flex-col items-center justify-center pt-2 pb-4">
+          <div className="flex flex-col items-center justify-center pt-1 pb-2">
             <motion.div
-              initial={{ opacity: 0, y: -30, scale: 0.85 }}
+              initial={{ opacity: 0, y: -20, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-              whileHover={{ scale: 1.05 }}
-              className="relative cursor-pointer"
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{ scale: 1.04 }}
+              className="relative cursor-pointer transform-gpu"
             >
               {/* Rotating Multi-Color Gradient Aura Glow */}
               <motion.div
                 animate={{
                   rotate: [0, 360],
-                  scale: [1, 1.12, 1],
-                  opacity: [0.45, 0.85, 0.45],
+                  scale: [1, 1.08, 1],
+                  opacity: [0.4, 0.75, 0.4],
                 }}
                 transition={{
-                  rotate: { duration: 10, repeat: Infinity, ease: "linear" },
+                  rotate: { duration: 12, repeat: Infinity, ease: "linear" },
                   scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
                   opacity: { duration: 4, repeat: Infinity, ease: "easeInOut" }
                 }}
-                className="absolute -inset-8 sm:-inset-12 bg-gradient-to-r from-purple-600 via-cyan-400 via-indigo-500 to-lime-400 rounded-full blur-3xl pointer-events-none"
+                className="absolute -inset-4 sm:-inset-10 bg-gradient-to-r from-purple-600 via-cyan-400 via-indigo-500 to-lime-400 rounded-full blur-xl sm:blur-3xl pointer-events-none transform-gpu"
               />
 
               {/* Orbiting Sparkle — top right */}
               <motion.div
-                animate={{ x: [0, 22, 0, -22, 0], y: [0, -18, 0, 18, 0], scale: [0.8, 1.3, 0.8] }}
+                animate={{ x: [0, 14, 0, -14, 0], y: [0, -10, 0, 10, 0], scale: [0.8, 1.2, 0.8] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-6 -right-6 z-30 p-2 bg-slate-950/90 rounded-full border border-lime-400/70 shadow-lg shadow-lime-500/20 text-lime-400"
+                className="absolute -top-3 -right-3 sm:-top-5 sm:-right-5 z-30 p-1 sm:p-2 bg-slate-950/90 rounded-full border border-lime-400/70 shadow-lg text-lime-400 transform-gpu"
               >
-                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 animate-pulse" />
+                <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 animate-pulse" />
               </motion.div>
 
               {/* Orbiting Atom — bottom left */}
               <motion.div
-                animate={{ x: [0, -24, 0, 24, 0], y: [0, 16, 0, -16, 0], scale: [1, 0.75, 1] }}
+                animate={{ x: [0, -16, 0, 16, 0], y: [0, 10, 0, -10, 0], scale: [1, 0.8, 1] }}
                 transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-5 -left-6 z-30 p-2 bg-slate-950/90 rounded-full border border-cyan-400/70 shadow-lg shadow-cyan-500/20 text-cyan-400"
+                className="absolute -bottom-2 -left-3 sm:-bottom-4 sm:-left-4 z-30 p-1 sm:p-2 bg-slate-950/90 rounded-full border border-cyan-400/70 shadow-lg text-cyan-400 transform-gpu"
               >
-                <Atom className="w-4 h-4 sm:w-5 sm:h-5" />
+                <Atom className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </motion.div>
 
-              {/* Free-Floating Logo — Bigger */}
+              {/* Free-Floating Logo */}
               <motion.div
-                animate={{ y: [0, -10, 0] }}
+                animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-                className="relative z-10 flex items-center justify-center"
+                className="relative z-10 flex items-center justify-center transform-gpu"
               >
                 <img
                   src="/mulearn-knp-logo-color.png"
                   alt="µLearn KNP Official Colorful Logo"
-                  className="h-36 sm:h-56 w-auto object-contain drop-shadow-[0_0_50px_rgba(124,58,237,0.65)]"
+                  className="h-20 sm:h-44 w-auto object-contain drop-shadow-[0_0_35px_rgba(124,58,237,0.55)]"
                 />
               </motion.div>
             </motion.div>

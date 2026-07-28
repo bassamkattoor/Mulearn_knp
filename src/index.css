@@ -55,20 +55,28 @@
   transform: translateY(-4px);
 }
 
-/* === ANIMATED GRADIENT MESH BACKGROUND === */
+/* === ANIMATED GRADIENT MESH BACKGROUND (OPTIMIZED FOR 60FPS) === */
 @keyframes mesh-float {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(30px, -20px) scale(1.05); }
-  50% { transform: translate(-20px, 20px) scale(0.95); }
-  75% { transform: translate(10px, -10px) scale(1.02); }
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  25% { transform: translate3d(20px, -15px, 0) scale(1.03); }
+  50% { transform: translate3d(-15px, 15px, 0) scale(0.97); }
+  75% { transform: translate3d(10px, -8px, 0) scale(1.01); }
 }
 
 .mesh-gradient {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
+  filter: blur(60px);
   pointer-events: none;
-  animation: mesh-float 12s ease-in-out infinite;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  animation: mesh-float 16s ease-in-out infinite;
+}
+
+@media (min-width: 640px) {
+  .mesh-gradient {
+    filter: blur(100px);
+  }
 }
 
 /* === GLOW BUTTON SYSTEM === */
