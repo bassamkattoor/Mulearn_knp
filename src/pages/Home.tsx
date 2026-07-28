@@ -85,42 +85,73 @@ export default function Home() {
         {/* Hero Headline Content */}
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-4 sm:space-y-6 pb-2 sm:pb-4">
 
-          {/* Big Motion Graphic Logo */}
-          <div className="flex flex-col items-center justify-center pt-1 pb-1">
+          {/* Mind-Blowing Colorful Motion Graphic Logo */}
+          <div className="flex flex-col items-center justify-center pt-2 pb-2">
             <motion.div
-              initial={{ opacity: 0, y: -20, scale: 0.9 }}
+              initial={{ opacity: 0, y: -30, scale: 0.85 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative group"
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{ scale: 1.05, rotate: [-1, 1, -1, 0] }}
+              className="relative cursor-pointer group"
             >
-              {/* Dynamic Animated Ambient Glow Ring */}
+              {/* Rotating Multi-Color Gradient Aura Glow */}
               <motion.div
                 animate={{
-                  scale: [1, 1.06, 1],
-                  opacity: [0.3, 0.65, 0.3],
+                  rotate: [0, 360],
+                  scale: [1, 1.08, 1],
+                  opacity: [0.5, 0.85, 0.5],
                 }}
                 transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut"
+                  rotate: { duration: 12, repeat: Infinity, ease: "linear" },
+                  scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                  opacity: { duration: 4, repeat: Infinity, ease: "easeInOut" }
                 }}
-                className="absolute -inset-3 bg-gradient-to-r from-violet-600 via-indigo-500 to-emerald-400 rounded-3xl blur-2xl pointer-events-none opacity-50"
+                className="absolute -inset-4 bg-gradient-to-r from-purple-500 via-cyan-400 via-indigo-500 to-lime-400 rounded-[38px] blur-2xl pointer-events-none"
               />
 
-              {/* Floating Logo Container */}
+              {/* Orbiting Sparkle Element 1 */}
               <motion.div
-                animate={{ y: [0, -6, 0] }}
+                animate={{
+                  x: [0, 15, 0, -15, 0],
+                  y: [0, -12, 0, 12, 0],
+                  scale: [0.8, 1.2, 0.8]
+                }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-3 -right-3 z-30 p-1.5 bg-slate-950/90 rounded-full border border-lime-400/60 shadow-lg text-lime-400"
+              >
+                <Sparkles className="w-4 h-4 animate-pulse" />
+              </motion.div>
+
+              {/* Orbiting Sparkle Element 2 */}
+              <motion.div
+                animate={{
+                  x: [0, -18, 0, 18, 0],
+                  y: [0, 10, 0, -10, 0],
+                  scale: [1, 0.8, 1]
+                }}
+                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -bottom-2 -left-3 z-30 p-1.5 bg-slate-950/90 rounded-full border border-cyan-400/60 shadow-lg text-cyan-400"
+              >
+                <Atom className="w-4 h-4" />
+              </motion.div>
+
+              {/* Floating Logo Container Card */}
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
                 transition={{
-                  duration: 5,
+                  duration: 4.5,
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                className="relative px-6 py-2.5 sm:px-10 sm:py-3.5 bg-[#080816]/90 rounded-3xl border border-indigo-500/30 shadow-2xl backdrop-blur-xl flex items-center justify-center"
+                className="relative px-6 py-3 sm:px-10 sm:py-4 bg-white/95 rounded-[32px] border-2 border-indigo-400/40 shadow-[0_0_60px_rgba(124,58,237,0.45)] backdrop-blur-2xl flex items-center justify-center overflow-hidden"
               >
+                {/* Glossy Reflection Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 to-transparent opacity-60 pointer-events-none" />
+
                 <img
-                  src="/mulearn-knp-logo-white.png"
-                  alt="µLearn KNP Logo"
-                  className="h-14 sm:h-24 w-auto object-contain drop-shadow-[0_0_25px_rgba(124,58,237,0.6)]"
+                  src="/mulearn-knp-logo-color.png"
+                  alt="µLearn KNP Official Colorful Logo"
+                  className="h-16 sm:h-28 w-auto object-contain relative z-10 filter drop-shadow(0 4px 12px rgba(0,0,0,0.15))"
                 />
               </motion.div>
             </motion.div>
