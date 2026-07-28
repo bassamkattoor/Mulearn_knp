@@ -9,8 +9,7 @@ import { Star } from 'lucide-react';
 export default function Execom() {
   const all = teamData as Member[];
   const faculty = all.filter(m => m.year === 'Faculty');
-  const coreLeads = all.filter(m => ['Campus Lead', 'Campus Co-Lead', 'Tech Lead'].includes(m.role));
-  const otherLeads = all.filter(m => !['Campus Lead', 'Campus Co-Lead', 'Tech Lead'].includes(m.role) && m.year !== 'Faculty');
+  const studentLeads = all.filter(m => m.year !== 'Faculty');
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-textMain pt-14 sm:pt-20">
@@ -79,19 +78,11 @@ export default function Execom() {
             </section>
           ))}
 
-          {/* Core Leadership — Campus Lead, Co-Lead, Tech Lead */}
+          {/* Unified ExeCom Team Section */}
           <section className="section-glow">
-            <SectionHeader eyebrow="Core Leadership" title="Campus Leads" centered />
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {coreLeads.map(m => <MemberCard key={m.id} member={m} />)}
-            </div>
-          </section>
-
-          {/* IG & Ops Leads */}
-          <section className="section-glow">
-            <SectionHeader eyebrow="Operations & Interest Groups" title="Executive Committee" centered />
+            <SectionHeader eyebrow="Chapter Leadership" title="Executive Committee" centered />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {otherLeads.map(m => <MemberCard key={m.id} member={m} />)}
+              {studentLeads.map(m => <MemberCard key={m.id} member={m} />)}
             </div>
           </section>
 
