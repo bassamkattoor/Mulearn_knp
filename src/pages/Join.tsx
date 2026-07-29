@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MessageSquare, Send, ArrowRight, Compass, Shield, Terminal, Code, Award, CheckCircle2 } from 'lucide-react';
+import { MessageSquare, Send, ArrowRight, Compass, Shield, Terminal, Code, Award, CheckCircle2, UserPlus, ExternalLink } from 'lucide-react';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import SectionHeader from '../components/layout/SectionHeader';
@@ -85,25 +85,34 @@ export default function Join() {
             <p className="text-base text-slate-400 max-w-xl mx-auto leading-relaxed">
               No prior coding experience required. We guide you step-by-step from zero to shipping real projects alongside student peers.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-2">
+            <div className="flex flex-wrap justify-center items-center gap-3.5 pt-2">
+              <a
+                href="https://app.mulearn.org/register"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-glow w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-violet-600 via-indigo-600 to-sky-500 text-white font-bold text-sm shadow-xl shadow-violet-600/30 flex items-center justify-center space-x-2.5 pulse-ring"
+              >
+                <UserPlus className="w-4 h-4" />
+                <span>Register on µLearn App</span>
+                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+              </a>
               <a
                 href="https://discord.gg"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-glow w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-bold text-sm shadow-xl shadow-violet-600/30 flex items-center justify-center space-x-2.5"
+                className="w-full sm:w-auto px-7 py-4 rounded-full bg-indigo-950/80 border border-indigo-500/30 hover:bg-indigo-900/60 text-slate-200 font-semibold text-sm transition-all flex items-center justify-center space-x-2"
               >
-                <MessageSquare className="w-4 h-4" />
-                <span>Join Discord Community</span>
-                <ArrowRight className="w-4 h-4" />
+                <MessageSquare className="w-4 h-4 text-indigo-400" />
+                <span>Join Discord</span>
               </a>
               <a
                 href="https://whatsapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-600/90 hover:bg-emerald-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/20 flex items-center justify-center space-x-2.5 transition-all hover:scale-105"
+                className="w-full sm:w-auto px-7 py-4 rounded-full bg-emerald-950/80 border border-emerald-500/30 hover:bg-emerald-900/60 text-emerald-200 font-semibold text-sm transition-all flex items-center justify-center space-x-2"
               >
-                <Send className="w-4 h-4" />
-                <span>KNP WhatsApp Group</span>
+                <Send className="w-4 h-4 text-emerald-400" />
+                <span>WhatsApp Group</span>
               </a>
             </div>
           </div>
@@ -118,9 +127,11 @@ export default function Join() {
               {/* Connector line on desktop */}
               <div className="hidden lg:block absolute top-10 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-lime-600/40 via-violet-500/40 to-amber-500/40 pointer-events-none" />
 
-              {levels.map((item, index) => (
-                <div key={index} className="glass-card p-6 rounded-2xl flex flex-col relative overflow-hidden group hover:border-violet-500/30 transition-all">
-                  <div className={`absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl opacity-30 bg-gradient-to-br ${item.gradient} pointer-events-none`} />
+              {levels.map((item, i) => (
+                <div
+                  key={i}
+                  className="glass-card p-6 rounded-2xl border border-slate-800 flex flex-col justify-between relative z-10 hover:border-violet-500/30"
+                >
                   <div className="flex items-center justify-between mb-5">
                     <div className={`flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br ${item.gradient} shadow-lg ${item.glow}`}>
                       <span className="font-display font-black text-white text-xs">{item.level}</span>
@@ -167,25 +178,28 @@ export default function Join() {
                 Ready? Let's build.
               </h2>
               <p className="text-slate-400 text-sm leading-relaxed">
-                Join the µLearn KNP Discord server, complete the onboarding task, and earn your first 100 Karma points today.
+                Create your official account on the µLearn platform, join the KNP Discord server, and start building your proof of work today.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <a
+                  href="https://app.mulearn.org/register"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-glow px-8 py-4 rounded-full bg-gradient-to-r from-violet-600 via-indigo-600 to-sky-500 text-white font-bold text-sm shadow-xl shadow-violet-600/30 flex items-center justify-center space-x-2"
+                >
+                  <UserPlus className="w-4 h-4" />
+                  <span>Register on µLearn App</span>
+                  <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+                </a>
                 <a
                   href="https://discord.gg"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-glow px-8 py-4 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-bold text-sm shadow-xl shadow-violet-600/30 flex items-center justify-center space-x-2"
-                >
-                  <MessageSquare className="w-4 h-4" />
-                  <span>Join Discord Onboarding</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </a>
-                <Link
-                  to="/about"
                   className="px-8 py-4 rounded-full border border-slate-700 text-slate-300 font-semibold text-sm hover:border-violet-500/40 hover:text-white transition-all flex items-center justify-center space-x-2"
                 >
-                  <span>Learn More About KNP</span>
-                </Link>
+                  <MessageSquare className="w-4 h-4 text-indigo-400" />
+                  <span>Join Discord Onboarding</span>
+                </a>
               </div>
             </div>
           </section>
