@@ -10,6 +10,8 @@ export interface Member {
     linkedin?: string;
     github?: string;
     twitter?: string;
+    instagram?: string;
+    portfolio?: string;
   };
 }
 

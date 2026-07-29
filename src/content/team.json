@@ -3,7 +3,7 @@
     "id": "team-faculty",
     "name": "Anju S",
     "role": "Campus Enabler",
-    "department": "Assistant Professor",
+    "department": "Asst. Professor, Computer Science & Engineering",
     "year": "Faculty",
     "bio": "Providing institutional support, mentorship, and guidance for µLearn KNP activities at College of Engineering Karunagappally.",
     "image": "/execom/ENABLER.png",
@@ -20,8 +20,8 @@
     "bio": "Driving the vision and culture of µLearn KNP on campus — building a community of doers, not just learners.",
     "image": "/execom/LEAD.png",
     "socials": {
-      "linkedin": "https://linkedin.com",
-      "github": "https://github.com"
+      "linkedin": "https://in.linkedin.com/in/anita-b-merin-25b8b01b9",
+      "instagram": "https://www.instagram.com/anitabmerin?igsh=MXgzY2JkOXk2aHBhbA=="
     }
   },
   {
@@ -33,8 +33,8 @@
     "bio": "Co-piloting chapter operations and making sure every student has a path to build, learn, and grow.",
     "image": "/execom/CO LEAD.png",
     "socials": {
-      "linkedin": "https://linkedin.com",
-      "github": "https://github.com"
+      "linkedin": "https://www.linkedin.com/in/charutha-rajeevan-b76708381",
+      "instagram": "https://www.instagram.com/_charu_tha_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
     }
   },
   {
@@ -46,8 +46,9 @@
     "bio": "Leading the technical direction of the chapter — from web infrastructure to developer tools and open-source projects.",
     "image": "/execom/TECH LEAD.png",
     "socials": {
-      "linkedin": "https://linkedin.com",
-      "github": "https://github.com"
+      "linkedin": "https://www.linkedin.com/in/bassam-kattoor-a681a3341",
+      "github": "https://github.com/bassamkattoor",
+      "portfolio": "https://bassamkattoor.vercel.app"
     }
   },
   {
@@ -59,8 +60,9 @@
     "bio": "Shaping the visual identity and creative direction of µLearn KNP — from event branding to social media.",
     "image": "/execom/CREATIVE LEAD.png",
     "socials": {
-      "linkedin": "https://linkedin.com",
-      "github": "https://github.com"
+      "linkedin": "https://www.linkedin.com/in/souravalchemist",
+      "portfolio": "https://souravportfoli.vercel.app",
+      "instagram": "https://www.instagram.com/s_ourxv_?igsh=MXh2dTgyZnpmdDJzYw=="
     }
   },
   {
@@ -78,15 +80,15 @@
   },
   {
     "id": "team-6",
-    "name": "Souparnika S",
+    "name": "Souparnika A",
     "role": "Student Coordinator Lead",
     "department": "Computer Science & Engineering",
     "year": "2nd Year",
     "bio": "Keeping operations smooth and every member engaged — the backbone of day-to-day chapter coordination.",
     "image": "/execom/STUDENT COORDINATOR LEAD.png",
     "socials": {
-      "linkedin": "https://linkedin.com",
-      "github": "https://github.com"
+      "linkedin": "https://linkedin.com/in/souparnika-a-309423384",
+      "instagram": "https://www.instagram.com/_sou_parnika07?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
     }
   },
   {
@@ -98,8 +100,8 @@
     "bio": "Leading the UI/UX Interest Group — teaching design thinking, Figma, and building beautiful user experiences.",
     "image": "",
     "socials": {
-      "linkedin": "https://linkedin.com",
-      "github": "https://github.com"
+      "linkedin": "https://www.linkedin.com/in/sree-hari-b44841277",
+      "instagram": "https://www.instagram.com/the.real.sree__/"
     }
   },
   {

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExternalLink, GitBranch } from 'lucide-react';
+import { ExternalLink, GitBranch, Link, Globe } from 'lucide-react';
 import type { Member } from '../../types';
 
 interface MemberCardProps {
@@ -100,8 +100,8 @@ export default function MemberCard({ member }: MemberCardProps) {
         </div>
 
         {/* Social links */}
-        {(member.socials?.linkedin || member.socials?.github) && (
-          <div className="flex items-center gap-2 mt-3">
+        {(member.socials?.linkedin || member.socials?.github || member.socials?.instagram || member.socials?.portfolio) && (
+          <div className="flex items-center justify-center flex-wrap gap-2 mt-3">
             {member.socials.linkedin && (
               <a
                 href={member.socials.linkedin}
@@ -124,6 +124,30 @@ export default function MemberCard({ member }: MemberCardProps) {
                 title="GitHub"
               >
                 <GitBranch className="w-3.5 h-3.5" />
+              </a>
+            )}
+            {member.socials.instagram && (
+              <a
+                href={member.socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={e => e.stopPropagation()}
+                className="p-2 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-400 hover:text-pink-400 hover:border-pink-500/40 transition-all"
+                title="Instagram"
+              >
+                <Link className="w-3.5 h-3.5" />
+              </a>
+            )}
+            {member.socials.portfolio && (
+              <a
+                href={member.socials.portfolio}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={e => e.stopPropagation()}
+                className="p-2 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-400 hover:text-lime-400 hover:border-lime-500/40 transition-all"
+                title="Portfolio"
+              >
+                <Globe className="w-3.5 h-3.5" />
               </a>
             )}
           </div>
