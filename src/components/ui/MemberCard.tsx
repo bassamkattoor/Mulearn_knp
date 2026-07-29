@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Linkedin, Github } from 'lucide-react';
+import { ExternalLink, GitBranch } from 'lucide-react';
 import type { Member } from '../../types';
 
 interface MemberCardProps {
@@ -48,19 +48,27 @@ export default function MemberCard({ member }: MemberCardProps) {
     >
 
       {/* ── Photo area ── */}
-      <div className="relative w-full aspect-[3/4] overflow-hidden bg-gradient-to-b from-slate-800/40 to-slate-950">
+      <div className="relative w-full aspect-[3/4] overflow-hidden bg-[#0d0d1a]">
 
-        {/* Subtle dot-grid background inside card */}
+        {/* Subtle radial glow behind the person */}
         <div
-          className="absolute inset-0 pointer-events-none opacity-40"
+          className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: 'radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)',
+            background: `radial-gradient(ellipse 70% 60% at 50% 80%, ${accent.glow}, transparent 80%)`,
+          }}
+        />
+
+        {/* Dot grid texture */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-20"
+          style={{
+            backgroundImage: 'radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px)',
             backgroundSize: '18px 18px',
           }}
         />
 
-        {/* Gradient fade at bottom so cutout bleeds into card content */}
-        <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent z-10 pointer-events-none" />
+        {/* Gradient fade at bottom so image blends into card content */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent z-10 pointer-events-none" />
 
         {hasSvg ? (
           <img
@@ -103,7 +111,7 @@ export default function MemberCard({ member }: MemberCardProps) {
                 className="p-2 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-400 hover:text-sky-400 hover:border-sky-500/40 transition-all"
                 title="LinkedIn"
               >
-                <Linkedin className="w-3.5 h-3.5" />
+                <ExternalLink className="w-3.5 h-3.5" />
               </a>
             )}
             {member.socials.github && (
@@ -115,7 +123,7 @@ export default function MemberCard({ member }: MemberCardProps) {
                 className="p-2 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-400 hover:text-white hover:border-slate-600 transition-all"
                 title="GitHub"
               >
-                <Github className="w-3.5 h-3.5" />
+                <GitBranch className="w-3.5 h-3.5" />
               </a>
             )}
           </div>

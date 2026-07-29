@@ -3,7 +3,7 @@ import Footer from '../components/layout/Footer';
 import MemberCard from '../components/ui/MemberCard';
 import teamData from '../content/team.json';
 import type { Member } from '../types';
-import { Star, Linkedin } from 'lucide-react';
+import { Star, ExternalLink } from 'lucide-react';
 
 import { useState, useEffect } from 'react';
 
@@ -107,7 +107,7 @@ export default function Execom() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center space-x-2 w-fit mt-2 px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700 text-xs text-slate-300 hover:border-sky-500/40 hover:text-sky-300 transition-all"
                       >
-                        <Linkedin className="w-3.5 h-3.5" />
+                        <ExternalLink className="w-3.5 h-3.5" />
                         <span>LinkedIn</span>
                       </a>
                     )}
@@ -127,7 +127,7 @@ export default function Execom() {
               <p className="text-sm text-slate-500 max-w-md">Click any card to read their story. Hover to see the magic.</p>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-5">
+            <div className="grid grid-cols-3 gap-5 sm:gap-6 max-w-5xl mx-auto">
               {studentLeads.map(m => <MemberCard key={m.id} member={m} />)}
             </div>
           </section>

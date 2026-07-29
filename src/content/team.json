@@ -6,7 +6,7 @@
     "department": "Assistant Professor",
     "year": "Faculty",
     "bio": "Providing institutional support, mentorship, and guidance for µLearn KNP activities at College of Engineering Karunagappally.",
-    "image": "/execom/ENABLER.svg",
+    "image": "/execom/ENABLER.png",
     "socials": {
       "linkedin": "https://linkedin.com"
     }
@@ -18,7 +18,7 @@
     "department": "Computer Science & Engineering",
     "year": "2nd Year",
     "bio": "Driving the vision and culture of µLearn KNP on campus — building a community of doers, not just learners.",
-    "image": "/execom/LEAD.svg",
+    "image": "/execom/LEAD.png",
     "socials": {
       "linkedin": "https://linkedin.com",
       "github": "https://github.com"
@@ -31,7 +31,7 @@
     "department": "Artificial Intelligence & Data Science",
     "year": "2nd Year",
     "bio": "Co-piloting chapter operations and making sure every student has a path to build, learn, and grow.",
-    "image": "/execom/CO LEAD.svg",
+    "image": "/execom/CO LEAD.png",
     "socials": {
       "linkedin": "https://linkedin.com",
       "github": "https://github.com"
@@ -44,7 +44,7 @@
     "department": "Bachelor of Computer Applications (Hons)",
     "year": "2nd Year",
     "bio": "Leading the technical direction of the chapter — from web infrastructure to developer tools and open-source projects.",
-    "image": "/execom/TECH LEAD.svg",
+    "image": "/execom/TECH LEAD.png",
     "socials": {
       "linkedin": "https://linkedin.com",
       "github": "https://github.com"
@@ -57,7 +57,7 @@
     "department": "Artificial Intelligence & Data Science",
     "year": "4th Year",
     "bio": "Shaping the visual identity and creative direction of µLearn KNP — from event branding to social media.",
-    "image": "/execom/CREATIVE LEAD.svg",
+    "image": "/execom/CREATIVE LEAD.png",
     "socials": {
       "linkedin": "https://linkedin.com",
       "github": "https://github.com"
@@ -70,7 +70,7 @@
     "department": "Computer Science & Engineering",
     "year": "2nd Year",
     "bio": "Connecting µLearn KNP with the wider student community — building bridges, spreading the word, and growing the chapter.",
-    "image": "/execom/OUTREACH LEAD.svg",
+    "image": "/execom/OUTREACH LEAD.png",
     "socials": {
       "linkedin": "https://linkedin.com",
       "github": "https://github.com"
@@ -83,7 +83,7 @@
     "department": "Computer Science & Engineering",
     "year": "2nd Year",
     "bio": "Keeping operations smooth and every member engaged — the backbone of day-to-day chapter coordination.",
-    "image": "/execom/STUDENT COORDINATOR LEAD.svg",
+    "image": "/execom/STUDENT COORDINATOR LEAD.png",
     "socials": {
       "linkedin": "https://linkedin.com",
       "github": "https://github.com"
@@ -109,7 +109,7 @@
     "department": "Artificial Intelligence & Data Science",
     "year": "2nd Year",
     "bio": "Heading the Web Development Interest Group — from HTML basics to full-stack projects and proof-of-work submissions.",
-    "image": "/execom/WEB IG LEAD.svg",
+    "image": "/execom/WEB IG LEAD.png",
     "socials": {
       "linkedin": "https://linkedin.com",
       "github": "https://github.com"
@@ -122,7 +122,7 @@
     "department": "Bachelor of Computer Applications (Hons)",
     "year": "2nd Year",
     "bio": "Leading the Gaming Interest Group — from game design fundamentals to building interactive experiences and game jams.",
-    "image": "/execom/GAMING IG LEAD.svg",
+    "image": "/execom/GAMING IG LEAD.png",
     "socials": {
       "linkedin": "https://linkedin.com",
       "github": "https://github.com"
