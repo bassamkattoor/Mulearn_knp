@@ -5,8 +5,20 @@ import noticesData from '../content/notices.json';
 import type { Notice } from '../types';
 import { Bell, Info } from 'lucide-react';
 
+import { useState, useEffect } from 'react';
+
 export default function NoticeBoard() {
-  const notices = noticesData as Notice[];
+  const [allNotices, setAllNotices] = useState<Notice[]>(noticesData as Notice[]);
+  const [activeTag, setActiveTag] = useState('All');
+
+  useEffect(() => {
+    const localData = localStorage.getItem('mulearn_knp_notices');
+    if (localData) {
+      setAllNotices(JSON.parse(localData));
+    }
+  }, []);
+
+  const notices = activeTag === 'All' ? allNotices : allNotices.filter(n => n.tag === activeTag);
   const tags = ['All', 'Urgent', 'Opportunity', 'Event'];
   const tagColors: Record<string, string> = {
     Urgent: 'text-red-300 bg-red-500/10 border-red-500/30',
@@ -48,18 +60,28 @@ export default function NoticeBoard() {
           {/* Tag Legend */}
           <div className="flex flex-wrap items-center gap-3 pb-4 border-b border-slate-800/60">
             <span className="text-xs text-slate-500 font-medium uppercase tracking-wider">Filter by:</span>
-            {tags.map(tag => (
-              <span
-                key={tag}
-                className={`px-3 py-1 rounded-full border text-[11px] font-bold cursor-pointer transition-all ${
-                  tag === 'All'
-                    ? 'text-violet-300 bg-violet-500/10 border-violet-500/30'
-                    : tagColors[tag] ?? 'text-slate-400 bg-slate-800/60 border-slate-700'
-                }`}
-              >
-                {tag}
-              </span>
-            ))}
+            {tags.map(tag => {
+              const isSelected = activeTag === tag;
+              return (
+                <button
+                  key={tag}
+                  onClick={() => setActiveTag(tag)}
+                  className={`px-3 py-1 rounded-full border text-[11px] font-bold cursor-pointer transition-all ${
+                    isSelected
+                      ? tag === 'All'
+                        ? 'text-violet-300 bg-violet-500/20 border-violet-500/50 shadow-[0_0_12px_rgba(124,58,237,0.2)]'
+                        : tag === 'Urgent'
+                        ? 'text-red-300 bg-red-500/20 border-red-500/50 shadow-[0_0_12px_rgba(239,68,68,0.2)]'
+                        : tag === 'Opportunity'
+                        ? 'text-lime-300 bg-lime-500/20 border-lime-500/50 shadow-[0_0_12px_rgba(132,204,22,0.2)]'
+                        : 'text-sky-300 bg-sky-500/20 border-sky-500/50 shadow-[0_0_12px_rgba(14,165,233,0.2)]'
+                      : 'text-slate-400 bg-slate-900/60 border-slate-800 hover:text-slate-200'
+                  }`}
+                >
+                  {tag}
+                </button>
+              );
+            })}
           </div>
 
           {/* Notice Items */}

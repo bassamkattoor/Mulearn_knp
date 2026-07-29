@@ -6,8 +6,18 @@ import teamData from '../content/team.json';
 import type { Member } from '../types';
 import { Star } from 'lucide-react';
 
+import { useState, useEffect } from 'react';
+
 export default function Execom() {
-  const all = teamData as Member[];
+  const [all, setAll] = useState<Member[]>(teamData as Member[]);
+
+  useEffect(() => {
+    const localData = localStorage.getItem('mulearn_knp_team');
+    if (localData) {
+      setAll(JSON.parse(localData));
+    }
+  }, []);
+
   const faculty = all.filter(m => m.year === 'Faculty');
   const studentLeads = all.filter(m => m.year !== 'Faculty');
 

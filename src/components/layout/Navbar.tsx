@@ -56,19 +56,14 @@ export default function Navbar() {
 
           {/* Login Slot */}
           <div className="hidden md:flex items-center">
-            <div className="relative group">
-              <button
-                disabled
-                className="flex items-center space-x-2 px-4 py-2 rounded-full bg-surface/60 text-slate-400 border border-indigo-500/20 cursor-not-allowed opacity-80 group-hover:border-indigo-500/40 transition-all"
-              >
-                <LogIn className="w-4 h-4 text-violet-400" />
-                <span className="text-xs font-medium">Login</span>
-                <Sparkles className="w-3 h-3 text-amber-400 opacity-60" />
-              </button>
-              <div className="absolute right-0 top-full mt-2 hidden group-hover:block bg-surface border border-indigo-500/20 text-xs text-slate-300 px-3 py-1.5 rounded-xl shadow-2xl whitespace-nowrap z-50">
-                Login — Coming soon
-              </div>
-            </div>
+            <Link
+              to="/admin"
+              className="flex items-center space-x-2 px-4 py-2 rounded-full bg-surface/60 text-slate-300 border border-indigo-500/20 hover:border-indigo-500/50 hover:text-white transition-all shadow-md"
+            >
+              <LogIn className="w-4 h-4 text-violet-400" />
+              <span className="text-xs font-medium">Login</span>
+              <Sparkles className="w-3 h-3 text-accent animate-pulse" />
+            </Link>
           </div>
 
           {/* Mobile Drawer Button */}
@@ -101,13 +96,14 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="pt-3 border-t border-slate-800">
-            <button
-              disabled
-              className="w-full flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl bg-surface/60 text-slate-400 border border-indigo-500/20 cursor-not-allowed opacity-75"
+            <Link
+              to="/admin"
+              onClick={() => setIsOpen(false)}
+              className="w-full flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl bg-surface/60 text-slate-300 border border-indigo-500/20 hover:border-indigo-500/50 hover:text-white transition-all"
             >
               <LogIn className="w-4 h-4 text-violet-400" />
-              <span className="text-xs font-medium">Login (Coming Soon)</span>
-            </button>
+              <span className="text-xs font-medium">Login</span>
+            </Link>
           </div>
         </div>
       )}

@@ -6,7 +6,17 @@ import StatCounter from '../components/ui/StatCounter';
 import { Heart, Eye, Globe, Sparkles } from 'lucide-react';
 import aboutData from '../content/about.json';
 
+import { useState, useEffect } from 'react';
+
 export default function About() {
+  const [data, setData] = useState(aboutData);
+
+  useEffect(() => {
+    const localData = localStorage.getItem('mulearn_knp_about');
+    if (localData) {
+      setData(JSON.parse(localData));
+    }
+  }, []);
   return (
     <div className="min-h-screen flex flex-col bg-background text-textMain pt-20">
       <Navbar />
@@ -41,17 +51,17 @@ export default function About() {
 
           {/* Stats */}
           <section className="section-glow grid grid-cols-2 lg:grid-cols-4 gap-4">
-            <StatCounter value={aboutData.stats.members} label="Active Members" suffix="+" />
-            <StatCounter value={aboutData.stats.karmaEarned} label="Karma Points Earned" suffix="+" />
-            <StatCounter value={aboutData.stats.eventsHeld} label="Events Hosted" suffix="+" />
-            <StatCounter value={aboutData.stats.activeIGs} label="Interest Groups" />
+            <StatCounter value={data.stats.members} label="Active Members" suffix="+" />
+            <StatCounter value={data.stats.karmaEarned} label="Karma Points Earned" suffix="+" />
+            <StatCounter value={data.stats.eventsHeld} label="Events Hosted" suffix="+" />
+            <StatCounter value={data.stats.activeIGs} label="Interest Groups" />
           </section>
 
           {/* What is µLearn */}
           <section className="section-glow grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-5">
               <SectionHeader eyebrow="The National Movement" title="What is µLearn?" />
-              <p className="text-slate-400 text-sm leading-relaxed">{aboutData.mulearnNational}</p>
+              <p className="text-slate-400 text-sm leading-relaxed">{data.mulearnNational}</p>
               <a
                 href="https://mulearn.org"
                 target="_blank"
@@ -75,7 +85,7 @@ export default function About() {
           {/* KNP Story */}
           <section className="section-glow glass-card p-8 sm:p-12 rounded-3xl border border-slate-800/60">
             <SectionHeader eyebrow="Our Story" title="The KNP Chapter" />
-            <p className="text-slate-400 text-sm leading-relaxed max-w-3xl">{aboutData.cekStory}</p>
+            <p className="text-slate-400 text-sm leading-relaxed max-w-3xl">{data.cekStory}</p>
           </section>
 
           {/* Vision & Mission */}
@@ -88,7 +98,7 @@ export default function About() {
                 </div>
                 <h3 className="font-display font-bold text-xl text-white">Our Vision</h3>
               </div>
-              <p className="text-slate-400 text-sm leading-relaxed">{aboutData.vision}</p>
+              <p className="text-slate-400 text-sm leading-relaxed">{data.vision}</p>
             </div>
             <div className="glass-card p-8 rounded-2xl border border-sky-500/20 relative overflow-hidden group hover:border-sky-500/40 transition-all">
               <div className="absolute top-0 right-0 w-40 h-40 bg-sky-600/10 rounded-full blur-3xl pointer-events-none" />
@@ -98,7 +108,7 @@ export default function About() {
                 </div>
                 <h3 className="font-display font-bold text-xl text-white">Our Mission</h3>
               </div>
-              <p className="text-slate-400 text-sm leading-relaxed">{aboutData.mission}</p>
+              <p className="text-slate-400 text-sm leading-relaxed">{data.mission}</p>
             </div>
           </section>
 
@@ -106,7 +116,7 @@ export default function About() {
           <section className="section-glow">
             <SectionHeader eyebrow="Core Values" title="What We Stand For" centered />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {aboutData.values.map((val, i) => {
+              {data.values.map((val, i) => {
                 const colors = ['from-violet-600 to-indigo-600', 'from-sky-600 to-blue-600', 'from-lime-500 to-emerald-500'];
                 const glows = ['bg-violet-600/10', 'bg-sky-600/10', 'bg-lime-500/10'];
                 return (

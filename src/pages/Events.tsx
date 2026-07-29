@@ -6,9 +6,19 @@ import eventsData from '../content/events.json';
 import type { Event } from '../types';
 import { CalendarDays, History } from 'lucide-react';
 
+import { useState, useEffect } from 'react';
+
 export default function Events() {
-  const upcoming = eventsData.upcoming as Event[];
-  const past = eventsData.past as Event[];
+  const [data, setData] = useState({ upcoming: eventsData.upcoming as Event[], past: eventsData.past as Event[] });
+
+  useEffect(() => {
+    const localData = localStorage.getItem('mulearn_knp_events');
+    if (localData) {
+      setData(JSON.parse(localData));
+    }
+  }, []);
+
+  const { upcoming, past } = data;
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-textMain pt-20">

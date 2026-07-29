@@ -5,8 +5,17 @@ import leaderboardData from '../content/leaderboard.json';
 import type { LeaderboardEntry } from '../types';
 import { Flame, Info, Trophy } from 'lucide-react';
 
+import { useState, useEffect } from 'react';
+
 export default function Leaderboard() {
-  const entries = leaderboardData as LeaderboardEntry[];
+  const [entries, setEntries] = useState<LeaderboardEntry[]>(leaderboardData as LeaderboardEntry[]);
+
+  useEffect(() => {
+    const localData = localStorage.getItem('mulearn_knp_leaderboard');
+    if (localData) {
+      setEntries(JSON.parse(localData));
+    }
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-textMain pt-20">

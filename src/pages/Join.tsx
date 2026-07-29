@@ -106,7 +106,7 @@ export default function Join() {
                 <span>Join Discord</span>
               </a>
               <a
-                href="https://whatsapp.com"
+                href="https://chat.whatsapp.com/FAq9emdaoWfDTJoPPVLpmh"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-7 py-4 rounded-full bg-emerald-950/80 border border-emerald-500/30 hover:bg-emerald-900/60 text-emerald-200 font-semibold text-sm transition-all flex items-center justify-center space-x-2"

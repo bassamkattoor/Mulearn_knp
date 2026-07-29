@@ -10,6 +10,7 @@ import NoticeBoard from './pages/NoticeBoard';
 import Leaderboard from './pages/Leaderboard';
 import Join from './pages/Join';
 import Theory from './pages/Theory';
+import Admin from './pages/Admin';
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -25,6 +26,7 @@ function AnimatedRoutes() {
         <Route path="/leaderboard" element={<PageTransition><Leaderboard /></PageTransition>} />
         <Route path="/join" element={<PageTransition><Join /></PageTransition>} />
         <Route path="/theory" element={<PageTransition><Theory /></PageTransition>} />
+        <Route path="/admin" element={<PageTransition><Admin /></PageTransition>} />
       </Routes>
     </AnimatePresence>
   );
