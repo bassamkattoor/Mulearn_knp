@@ -2,64 +2,111 @@
   {
     "id": "lb-1",
     "rank": 1,
-    "name": "Karthik R",
-    "avatar": "https://ui-avatars.com/api/?name=Karthik+R&background=a3e635&color=000&size=100",
-    "karma": 14250,
-    "rankChange": 2,
-    "ig": "Web Development"
+    "name": "Sreehari h",
+    "avatar": "https://ui-avatars.com/api/?name=Sreehari+h&background=10b981&color=fff&size=100",
+    "karma": 13481,
+    "level": "LVL5",
+    "department": "Computer Science and Engineering",
+    "rankChange": 0,
+    "ig": "Computer Science & Eng."
   },
   {
     "id": "lb-2",
     "rank": 2,
-    "name": "Devika M",
-    "avatar": "https://ui-avatars.com/api/?name=Devika+M&background=3b82f6&color=fff&size=100",
-    "karma": 12800,
-    "rankChange": 0,
-    "ig": "UI/UX Design"
+    "name": "Abhimanyu.R.B",
+    "avatar": "https://ui-avatars.com/api/?name=Abhimanyu+RB&background=3b82f6&color=fff&size=100",
+    "karma": 12022,
+    "level": "LVL4",
+    "department": "Computer Science and Engineering",
+    "rankChange": 1,
+    "ig": "Computer Science & Eng."
   },
   {
     "id": "lb-3",
     "rank": 3,
-    "name": "Abhinav S",
-    "avatar": "https://ui-avatars.com/api/?name=Abhinav+S&background=8b5cf6&color=fff&size=100",
-    "karma": 11400,
-    "rankChange": 1,
-    "ig": "Cybersecurity"
+    "name": "R SREEHARI",
+    "avatar": "https://ui-avatars.com/api/?name=R+Sreehari&background=6366f1&color=fff&size=100",
+    "karma": 11160,
+    "level": "LVL6",
+    "department": "Computer Science and Engineering",
+    "rankChange": 0,
+    "ig": "Computer Science & Eng."
   },
   {
     "id": "lb-4",
     "rank": 4,
-    "name": "Siddharth P",
-    "avatar": "https://ui-avatars.com/api/?name=Siddharth+P&background=f59e0b&color=fff&size=100",
-    "karma": 9750,
-    "rankChange": -1,
-    "ig": "AI / ML"
+    "name": "Prasanth P",
+    "avatar": "https://ui-avatars.com/api/?name=Prasanth+P&background=8b5cf6&color=fff&size=100",
+    "karma": 7503,
+    "level": "LVL4",
+    "department": "Computer Science and Engineering",
+    "rankChange": 0,
+    "ig": "Computer Science & Eng."
   },
   {
     "id": "lb-5",
     "rank": 5,
-    "name": "Meera Krishna",
-    "avatar": "https://ui-avatars.com/api/?name=Meera+Krishna&background=ec4899&color=fff&size=100",
-    "karma": 9100,
-    "rankChange": 3,
-    "ig": "Cloud & DevOps"
+    "name": "Dhanush G Krishnan",
+    "avatar": "https://ui-avatars.com/api/?name=Dhanush+G+K&background=f59e0b&color=fff&size=100",
+    "karma": 5732,
+    "level": "LVL4",
+    "department": "Computer Science and Engineering",
+    "rankChange": 2,
+    "ig": "Computer Science & Eng."
   },
   {
     "id": "lb-6",
     "rank": 6,
-    "name": "Arjun Mohan",
-    "avatar": "https://ui-avatars.com/api/?name=Arjun+Mohan&background=10b981&color=fff&size=100",
-    "karma": 8450,
+    "name": "Devanath. D. R",
+    "avatar": "https://ui-avatars.com/api/?name=Devanath+DR&background=06b6d4&color=fff&size=100",
+    "karma": 4660,
+    "level": "LVL5",
+    "department": "Computer Science and Engineering",
     "rankChange": 0,
-    "ig": "IoT & Robotics"
+    "ig": "Computer Science & Eng."
   },
   {
     "id": "lb-7",
     "rank": 7,
-    "name": "Sneha Suresh",
-    "avatar": "https://ui-avatars.com/api/?name=Sneha+Suresh&background=6366f1&color=fff&size=100",
-    "karma": 7900,
-    "rankChange": -2,
-    "ig": "Game Development"
+    "name": "Nijin k varghese",
+    "avatar": "https://ui-avatars.com/api/?name=Nijin+K+V&background=ec4899&color=fff&size=100",
+    "karma": 4042,
+    "level": "LVL3",
+    "department": "Computer Science and Engineering",
+    "rankChange": -1,
+    "ig": "Computer Science & Eng."
+  },
+  {
+    "id": "lb-8",
+    "rank": 8,
+    "name": "Abhijith B",
+    "avatar": "https://ui-avatars.com/api/?name=Abhijith+B&background=14b8a6&color=fff&size=100",
+    "karma": 3953,
+    "level": "LVL5",
+    "department": "Computer Science and Engineering",
+    "rankChange": 0,
+    "ig": "Computer Science & Eng."
+  },
+  {
+    "id": "lb-9",
+    "rank": 9,
+    "name": "Dhiya catherine",
+    "avatar": "https://ui-avatars.com/api/?name=Dhiya+C&background=a855f7&color=fff&size=100",
+    "karma": 3159,
+    "level": "LVL4",
+    "department": "Computer Science and Engineering",
+    "rankChange": 1,
+    "ig": "Computer Science & Eng."
+  },
+  {
+    "id": "lb-10",
+    "rank": 10,
+    "name": "Ananda Narayanan",
+    "avatar": "https://ui-avatars.com/api/?name=Ananda+N&background=84cc16&color=fff&size=100",
+    "karma": 2252,
+    "level": "LVL4",
+    "department": "Computer Science and Engineering",
+    "rankChange": 0,
+    "ig": "Computer Science & Eng."
   }
 ]

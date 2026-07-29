@@ -51,7 +51,7 @@ export default function Leaderboard() {
                 <div key={entry.id} className={`glass-card rounded-2xl p-4 text-center flex flex-col items-center justify-end border ${glows[i]} shadow-xl`}>
                   <img src={entry.avatar} alt={entry.name} className="w-12 h-12 rounded-full border-2 border-slate-700 mb-2 object-cover" />
                   <p className="font-display font-bold text-white text-xs leading-tight truncate w-full">{entry.name}</p>
-                  <p className="text-[10px] text-slate-500 truncate w-full mb-2">{entry.ig}</p>
+                  <p className="text-[10px] text-indigo-300 font-semibold truncate w-full mb-2">{entry.level || entry.ig}</p>
                   <div className={`w-full ${heights[i]} rounded-xl bg-gradient-to-t ${gradients[i]} flex items-center justify-center flex-col`}>
                     <Trophy className="w-4 h-4 text-white/80 mb-1" />
                     <span className="font-display font-black text-white text-sm">#{pos}</span>

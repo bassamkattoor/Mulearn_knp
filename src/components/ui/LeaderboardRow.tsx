@@ -33,10 +33,21 @@ export default function LeaderboardRow({ entry }: LeaderboardRowProps) {
 
       {/* Name & Level */}
       <div className="flex-1 min-w-0">
-        <p className="font-display font-bold text-sm text-white truncate group-hover:text-violet-200 transition-colors">{entry.name}</p>
-        <p className="text-[11px] text-slate-500 flex items-center space-x-1 mt-0.5">
-          <Award className="w-3 h-3 text-violet-500" />
-          <span>{entry.ig}</span>
+        <div className="flex items-center space-x-2">
+          <p className="font-display font-bold text-sm text-white truncate group-hover:text-violet-200 transition-colors">{entry.name}</p>
+          {entry.level && (
+            <span className={`px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider shrink-0 ${
+              entry.level === 'LVL6' ? 'bg-indigo-600/30 text-indigo-300 border border-indigo-500/40' :
+              entry.level === 'LVL5' ? 'bg-slate-900 text-slate-200 border border-slate-700' :
+              entry.level === 'LVL4' ? 'bg-teal-500/20 text-teal-300 border border-teal-500/40' :
+              'bg-slate-800/80 text-slate-400 border border-slate-700/60'
+            }`}>
+              {entry.level}
+            </span>
+          )}
+        </div>
+        <p className="text-[11px] text-slate-500 truncate mt-0.5">
+          {entry.department || entry.ig}
         </p>
       </div>
 

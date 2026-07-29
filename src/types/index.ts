@@ -39,4 +39,6 @@ export interface LeaderboardEntry {
   karma: number;
   rankChange: number;
   ig: string;
+  level?: string;
+  department?: string;
 }
