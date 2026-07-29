@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { LogIn, Lock, LayoutDashboard, LogOut, Award, Users, Calendar, Bell, Info, Shield, Download, FileJson, Check, ArrowRight, Eye } from 'lucide-react';
+import { LogIn, LayoutDashboard, LogOut, Award, Users, Calendar, Bell, Info, Shield, Download, FileJson, Check } from 'lucide-react';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 

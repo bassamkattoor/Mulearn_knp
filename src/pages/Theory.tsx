@@ -37,7 +37,7 @@ const pillars = [
   },
 ];
 
-const fadeUp = {
+const fadeUp: any = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({
     opacity: 1,

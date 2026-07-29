@@ -1,80 +1,125 @@
 import { useState } from 'react';
-import { Globe, Share2, ChevronDown, ChevronUp } from 'lucide-react';
+import { Linkedin, Github } from 'lucide-react';
 import type { Member } from '../../types';
 
 interface MemberCardProps {
   member: Member;
 }
 
+// Role-based accent colours so each card has its own character
+const roleAccent: Record<string, { border: string; glow: string; badge: string; badgeText: string }> = {
+  'Campus Lead':             { border: 'border-violet-500/40',  glow: 'rgba(139,92,246,0.18)',  badge: 'from-violet-600 to-indigo-600',  badgeText: 'text-violet-200' },
+  'Campus Co-Lead':          { border: 'border-sky-500/40',     glow: 'rgba(56,189,248,0.18)',  badge: 'from-sky-600 to-blue-600',       badgeText: 'text-sky-200' },
+  'Tech Lead':               { border: 'border-lime-500/40',    glow: 'rgba(163,230,53,0.18)',  badge: 'from-lime-600 to-emerald-600',   badgeText: 'text-lime-200' },
+  'Creative Lead':           { border: 'border-pink-500/40',    glow: 'rgba(236,72,153,0.18)',  badge: 'from-pink-600 to-rose-600',      badgeText: 'text-pink-200' },
+  'Outreach Lead':           { border: 'border-amber-500/40',   glow: 'rgba(245,158,11,0.18)',  badge: 'from-amber-500 to-orange-500',   badgeText: 'text-amber-200' },
+  'Student Coordinator Lead':{ border: 'border-emerald-500/40', glow: 'rgba(16,185,129,0.18)',  badge: 'from-emerald-600 to-teal-600',   badgeText: 'text-emerald-200' },
+  'UI/UX IG Lead':           { border: 'border-cyan-500/40',    glow: 'rgba(6,182,212,0.18)',   badge: 'from-cyan-600 to-sky-600',       badgeText: 'text-cyan-200' },
+  'Web IG Lead':             { border: 'border-indigo-500/40',  glow: 'rgba(99,102,241,0.18)',  badge: 'from-indigo-600 to-violet-600',  badgeText: 'text-indigo-200' },
+  'Gaming IG Lead':          { border: 'border-orange-500/40',  glow: 'rgba(249,115,22,0.18)',  badge: 'from-orange-600 to-red-600',     badgeText: 'text-orange-200' },
+};
+
+const fallbackAccent = { border: 'border-slate-600/40', glow: 'rgba(148,163,184,0.12)', badge: 'from-slate-600 to-slate-700', badgeText: 'text-slate-300' };
+
+// Placeholder when SVG is not yet available
+function InitialsPlaceholder({ name, accent }: { name: string; accent: typeof fallbackAccent }) {
+  const initials = name.split(' ').slice(0, 2).map(w => w[0]).join('').toUpperCase();
+  return (
+    <div className={`w-full h-full flex items-end justify-center bg-gradient-to-b from-slate-800/60 to-slate-900`}>
+      <div className={`mb-6 w-24 h-24 rounded-full bg-gradient-to-br ${accent.badge} flex items-center justify-center text-3xl font-display font-black text-white shadow-xl`}>
+        {initials}
+      </div>
+    </div>
+  );
+}
+
 export default function MemberCard({ member }: MemberCardProps) {
-  const [expanded, setExpanded] = useState(false);
+  const [showBio, setShowBio] = useState(false);
+  const accent = roleAccent[member.role] ?? fallbackAccent;
+  const hasSvg = !!member.image;
 
   return (
     <div
-      className="glass-card rounded-2xl p-5 relative overflow-hidden group hover:border-violet-500/30 transition-all cursor-pointer"
-      onClick={() => setExpanded(!expanded)}
+      className={`group relative flex flex-col rounded-3xl overflow-hidden border ${accent.border} bg-slate-900/60 backdrop-blur-sm cursor-pointer select-none transition-all duration-300 hover:-translate-y-1`}
+      style={{ boxShadow: `0 0 0 0px transparent`, transition: 'box-shadow 0.3s, transform 0.3s' }}
+      onMouseEnter={e => (e.currentTarget.style.boxShadow = `0 0 40px ${accent.glow}, 0 8px 32px rgba(0,0,0,0.5)`)}
+      onMouseLeave={e => (e.currentTarget.style.boxShadow = `0 0 0 0px transparent`)}
+      onClick={() => setShowBio(v => !v)}
     >
-      {/* BG glow on hover */}
-      <div className="absolute inset-0 bg-gradient-to-br from-violet-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-2xl" />
 
-      <div className="relative z-10 flex flex-col items-center text-center">
-        {/* Avatar with ring */}
-        <div className="relative mb-4">
-          <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-violet-600 via-indigo-500 to-sky-500 opacity-50 group-hover:opacity-100 blur-sm transition-opacity" />
+      {/* ── Photo area ── */}
+      <div className="relative w-full aspect-[3/4] overflow-hidden bg-gradient-to-b from-slate-800/40 to-slate-950">
+
+        {/* Subtle dot-grid background inside card */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-40"
+          style={{
+            backgroundImage: 'radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)',
+            backgroundSize: '18px 18px',
+          }}
+        />
+
+        {/* Gradient fade at bottom so cutout bleeds into card content */}
+        <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent z-10 pointer-events-none" />
+
+        {hasSvg ? (
           <img
             src={member.image}
             alt={member.name}
-            className="relative w-20 h-20 rounded-full border-2 border-slate-800 object-cover"
+            className="absolute inset-0 w-full h-full object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.04]"
+            style={{ filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.6))' }}
           />
-        </div>
-
-        {/* Name & Role */}
-        <h3 className="font-display font-bold text-base text-white">{member.name}</h3>
-        <span className="inline-block mt-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold bg-violet-500/10 border border-violet-500/25 text-violet-300 uppercase tracking-wider">
-          {member.role}
-        </span>
-        <p className="text-[11px] text-slate-500 mt-1">{member.department} · {member.year}</p>
-
-        {/* Bio (expand) */}
-        {expanded && (
-          <p className="text-xs text-slate-400 mt-3 leading-relaxed border-t border-slate-800 pt-3">
-            {member.bio}
-          </p>
+        ) : (
+          <InitialsPlaceholder name={member.name} accent={accent} />
         )}
 
-        {/* Social Links */}
-        <div className="flex items-center space-x-2 mt-4">
-          {member.socials.github && (
-            <a
-              href={member.socials.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 transition-all"
-              title="GitHub Profile"
-            >
-              <Globe className="w-4 h-4" />
-            </a>
-          )}
-          {member.socials.linkedin && (
-            <a
-              href={member.socials.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-sky-400 hover:border-slate-700 transition-all"
-              title="LinkedIn Profile"
-            >
-              <Share2 className="w-4 h-4" />
-            </a>
-          )}
-          <button
-            className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-500 hover:text-violet-400 hover:border-violet-500/30 transition-all"
-            onClick={(e) => { e.stopPropagation(); setExpanded(!expanded); }}
-          >
-            {expanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-          </button>
+        {/* Role badge pinned to bottom of image area, overlapping the fade */}
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20">
+          <span className={`inline-flex items-center px-3 py-1 rounded-full bg-gradient-to-r ${accent.badge} text-[10px] font-black uppercase tracking-widest ${accent.badgeText} shadow-lg whitespace-nowrap`}>
+            {member.role}
+          </span>
         </div>
+      </div>
+
+      {/* ── Info area ── */}
+      <div className="flex flex-col items-center text-center px-4 pb-5 pt-2 gap-1">
+        <h3 className="font-display font-black text-white text-base leading-tight mt-1">{member.name}</h3>
+        <p className="text-[11px] text-slate-400 font-medium">{member.year} · {member.department}</p>
+
+        {/* Bio (toggle) */}
+        <div className={`overflow-hidden transition-all duration-300 ${showBio ? 'max-h-40 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
+          <p className="text-xs text-slate-400 leading-relaxed border-t border-slate-800 pt-3 px-1">{member.bio}</p>
+        </div>
+
+        {/* Social links */}
+        {(member.socials?.linkedin || member.socials?.github) && (
+          <div className="flex items-center gap-2 mt-3">
+            {member.socials.linkedin && (
+              <a
+                href={member.socials.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={e => e.stopPropagation()}
+                className="p-2 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-400 hover:text-sky-400 hover:border-sky-500/40 transition-all"
+                title="LinkedIn"
+              >
+                <Linkedin className="w-3.5 h-3.5" />
+              </a>
+            )}
+            {member.socials.github && (
+              <a
+                href={member.socials.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={e => e.stopPropagation()}
+                className="p-2 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-400 hover:text-white hover:border-slate-600 transition-all"
+                title="GitHub"
+              >
+                <Github className="w-3.5 h-3.5" />
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

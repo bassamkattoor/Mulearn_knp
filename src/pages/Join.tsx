@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom';
-import { MessageSquare, Send, ArrowRight, Compass, Shield, Terminal, Code, Award, CheckCircle2, UserPlus, ExternalLink } from 'lucide-react';
+import { MessageSquare, Send, Compass, Shield, Terminal, Code, Award, CheckCircle2, UserPlus, ExternalLink } from 'lucide-react';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import SectionHeader from '../components/layout/SectionHeader';

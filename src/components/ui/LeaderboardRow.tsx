@@ -1,4 +1,4 @@
-import { Trophy, TrendingUp, TrendingDown, Minus, Award } from 'lucide-react';
+import { Trophy, TrendingUp, TrendingDown, Minus } from 'lucide-react';
 import type { LeaderboardEntry } from '../../types';
 
 interface LeaderboardRowProps {

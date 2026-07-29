@@ -20,11 +20,7 @@ export default function NoticeBoard() {
 
   const notices = activeTag === 'All' ? allNotices : allNotices.filter(n => n.tag === activeTag);
   const tags = ['All', 'Urgent', 'Opportunity', 'Event'];
-  const tagColors: Record<string, string> = {
-    Urgent: 'text-red-300 bg-red-500/10 border-red-500/30',
-    Opportunity: 'text-lime-300 bg-lime-500/10 border-lime-500/30',
-    Event: 'text-sky-300 bg-sky-500/10 border-sky-500/30',
-  };
+
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-textMain pt-20">

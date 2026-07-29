@@ -6,7 +6,7 @@
     "department": "Assistant Professor",
     "year": "Faculty",
     "bio": "Providing institutional support, mentorship, and guidance for µLearn KNP activities at College of Engineering Karunagappally.",
-    "image": "https://ui-avatars.com/api/?name=Anju+S&background=6366f1&color=fff&size=200",
+    "image": "/execom/ENABLER.svg",
     "socials": {
       "linkedin": "https://linkedin.com"
     }
@@ -18,7 +18,7 @@
     "department": "Computer Science & Engineering",
     "year": "2nd Year",
     "bio": "Driving the vision and culture of µLearn KNP on campus — building a community of doers, not just learners.",
-    "image": "https://ui-avatars.com/api/?name=Anita+B+Merin&background=8b5cf6&color=fff&size=200",
+    "image": "/execom/LEAD.svg",
     "socials": {
       "linkedin": "https://linkedin.com",
       "github": "https://github.com"
@@ -31,7 +31,7 @@
     "department": "Artificial Intelligence & Data Science",
     "year": "2nd Year",
     "bio": "Co-piloting chapter operations and making sure every student has a path to build, learn, and grow.",
-    "image": "https://ui-avatars.com/api/?name=Charutha+AV&background=3b82f6&color=fff&size=200",
+    "image": "/execom/CO LEAD.svg",
     "socials": {
       "linkedin": "https://linkedin.com",
       "github": "https://github.com"
@@ -44,7 +44,7 @@
     "department": "Bachelor of Computer Applications (Hons)",
     "year": "2nd Year",
     "bio": "Leading the technical direction of the chapter — from web infrastructure to developer tools and open-source projects.",
-    "image": "https://ui-avatars.com/api/?name=Bassam+Kattoor&background=a3e635&color=000&size=200",
+    "image": "/execom/TECH LEAD.svg",
     "socials": {
       "linkedin": "https://linkedin.com",
       "github": "https://github.com"
@@ -57,7 +57,7 @@
     "department": "Artificial Intelligence & Data Science",
     "year": "4th Year",
     "bio": "Shaping the visual identity and creative direction of µLearn KNP — from event branding to social media.",
-    "image": "https://ui-avatars.com/api/?name=Sourav+S&background=ec4899&color=fff&size=200",
+    "image": "/execom/CREATIVE LEAD.svg",
     "socials": {
       "linkedin": "https://linkedin.com",
       "github": "https://github.com"
@@ -70,7 +70,7 @@
     "department": "Computer Science & Engineering",
     "year": "2nd Year",
     "bio": "Connecting µLearn KNP with the wider student community — building bridges, spreading the word, and growing the chapter.",
-    "image": "https://ui-avatars.com/api/?name=Vishnu+Mohanan&background=f59e0b&color=fff&size=200",
+    "image": "/execom/OUTREACH LEAD.svg",
     "socials": {
       "linkedin": "https://linkedin.com",
       "github": "https://github.com"
@@ -83,7 +83,7 @@
     "department": "Computer Science & Engineering",
     "year": "2nd Year",
     "bio": "Keeping operations smooth and every member engaged — the backbone of day-to-day chapter coordination.",
-    "image": "https://ui-avatars.com/api/?name=Souparnika+S&background=10b981&color=fff&size=200",
+    "image": "/execom/STUDENT COORDINATOR LEAD.svg",
     "socials": {
       "linkedin": "https://linkedin.com",
       "github": "https://github.com"
@@ -96,7 +96,7 @@
     "department": "Computer Science & Engineering",
     "year": "4th Year",
     "bio": "Leading the UI/UX Interest Group — teaching design thinking, Figma, and building beautiful user experiences.",
-    "image": "https://ui-avatars.com/api/?name=Sreehari+H&background=06b6d4&color=fff&size=200",
+    "image": "",
     "socials": {
       "linkedin": "https://linkedin.com",
       "github": "https://github.com"
@@ -109,7 +109,7 @@
     "department": "Artificial Intelligence & Data Science",
     "year": "2nd Year",
     "bio": "Heading the Web Development Interest Group — from HTML basics to full-stack projects and proof-of-work submissions.",
-    "image": "https://ui-avatars.com/api/?name=Akash+Mohanan&background=7c3aed&color=fff&size=200",
+    "image": "/execom/WEB IG LEAD.svg",
     "socials": {
       "linkedin": "https://linkedin.com",
       "github": "https://github.com"
@@ -122,7 +122,7 @@
     "department": "Bachelor of Computer Applications (Hons)",
     "year": "2nd Year",
     "bio": "Leading the Gaming Interest Group — from game design fundamentals to building interactive experiences and game jams.",
-    "image": "https://ui-avatars.com/api/?name=Sankar+Santhosh&background=f97316&color=fff&size=200",
+    "image": "/execom/GAMING IG LEAD.svg",
     "socials": {
       "linkedin": "https://linkedin.com",
       "github": "https://github.com"
