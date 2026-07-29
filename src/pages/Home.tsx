@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  ArrowRight, Flame, Users, Compass, Award, Zap, ChevronRight,
+  ArrowRight, Flame, Users, Compass, Award, Zap,
+  ChevronRight, Sparkles, Atom, Terminal, Info,
 } from 'lucide-react';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
@@ -49,34 +50,82 @@ export default function Home() {
       <Navbar />
 
       {/* ── HERO ── */}
-      <section className="relative flex flex-col items-center justify-center pt-4 sm:pt-10 pb-0 overflow-hidden">
+      <section className="relative flex flex-col items-center justify-center pt-2 sm:pt-8 pb-0 overflow-hidden bg-gradient-to-b from-[#06060e] via-[#0b0c1b] to-background">
 
-        {/* Single subtle radial glow */}
-        <div className="absolute top-[-80px] left-1/2 -translate-x-1/2 w-[600px] h-[500px] bg-violet-700/18 rounded-full blur-[120px] pointer-events-none" />
+        {/* Animated mesh blobs */}
+        <div className="mesh-gradient w-[350px] h-[350px] sm:w-[650px] sm:h-[650px] bg-violet-700/20 top-[-100px] left-[-150px]" style={{ animationDelay: '0s' }} />
+        <div className="mesh-gradient w-[300px] h-[300px] sm:w-[550px] sm:h-[550px] bg-blue-600/15 top-[80px] right-[-140px]" style={{ animationDelay: '-4s' }} />
 
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-4 sm:space-y-6 pb-2 sm:pb-4">
+        {/* Grid overlay */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-30"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(124,58,237,0.08) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(124,58,237,0.08) 1px, transparent 1px)
+            `,
+            backgroundSize: '48px 48px',
+          }}
+        />
 
-          {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0, y: -16, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-center justify-center"
-          >
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-3 sm:space-y-6 pb-2 sm:pb-4">
+
+          {/* Logo with full animated aura + orbiting widgets */}
+          <div className="flex flex-col items-center justify-center pt-1 pb-2">
             <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
-              className="relative"
+              initial={{ opacity: 0, y: -20, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{ scale: 1.04 }}
+              className="relative cursor-pointer transform-gpu"
             >
-              {/* Soft aura behind logo */}
-              <div className="absolute -inset-6 bg-gradient-to-r from-violet-600/30 via-indigo-500/20 to-lime-400/20 rounded-full blur-2xl pointer-events-none" />
-              <img
-                src="/mulearn-knp-logo-color.png"
-                alt="µLearn KNP"
-                className="relative h-20 sm:h-36 w-auto object-contain drop-shadow-[0_0_30px_rgba(124,58,237,0.45)]"
+              {/* Rotating multi-color aura */}
+              <motion.div
+                animate={{
+                  rotate: [0, 360],
+                  scale: [1, 1.08, 1],
+                  opacity: [0.4, 0.75, 0.4],
+                }}
+                transition={{
+                  rotate: { duration: 12, repeat: Infinity, ease: 'linear' },
+                  scale: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                  opacity: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                }}
+                className="absolute -inset-4 sm:-inset-10 bg-gradient-to-r from-purple-600 via-cyan-400 via-indigo-500 to-lime-400 rounded-full blur-xl sm:blur-3xl pointer-events-none transform-gpu"
               />
+
+              {/* Orbiting Sparkle — top right */}
+              <motion.div
+                animate={{ x: [0, 14, 0, -14, 0], y: [0, -10, 0, 10, 0], scale: [0.8, 1.2, 0.8] }}
+                transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute -top-3 -right-3 sm:-top-5 sm:-right-5 z-30 p-1 sm:p-2 bg-slate-950/90 rounded-full border border-lime-400/70 shadow-lg text-lime-400 transform-gpu"
+              >
+                <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 animate-pulse" />
+              </motion.div>
+
+              {/* Orbiting Atom — bottom left */}
+              <motion.div
+                animate={{ x: [0, -16, 0, 16, 0], y: [0, 10, 0, -10, 0], scale: [1, 0.8, 1] }}
+                transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute -bottom-2 -left-3 sm:-bottom-4 sm:-left-4 z-30 p-1 sm:p-2 bg-slate-950/90 rounded-full border border-cyan-400/70 shadow-lg text-cyan-400 transform-gpu"
+              >
+                <Atom className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              </motion.div>
+
+              {/* Floating logo */}
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+                className="relative z-10 flex items-center justify-center transform-gpu"
+              >
+                <img
+                  src="/mulearn-knp-logo-color.png"
+                  alt="µLearn KNP Official Logo"
+                  className="h-24 sm:h-44 w-auto object-contain drop-shadow-[0_0_35px_rgba(124,58,237,0.55)]"
+                />
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </div>
 
           {/* Chapter badge */}
           <div className="flex justify-center">
@@ -125,6 +174,18 @@ export default function Home() {
             <span className="text-slate-200 font-medium">College of Engineering Karunagappally</span>.
           </motion.p>
 
+          {/* Theory badge */}
+          <div className="flex justify-center pt-1 sm:pt-0">
+            <Link
+              to="/theory"
+              className="inline-flex items-center space-x-2 px-3.5 py-1.5 sm:px-5 sm:py-2.5 rounded-full bg-gradient-to-r from-indigo-950/80 to-violet-950/80 border border-violet-500/25 text-[10px] sm:text-xs font-medium text-slate-300 hover:border-violet-400/50 hover:bg-indigo-900/40 transition-all shadow-md max-w-full"
+            >
+              <Info className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-sky-400 shrink-0" />
+              <span className="truncate">Backed by Self-Determination Theory — Deci &amp; Ryan</span>
+              <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-indigo-400 shrink-0" />
+            </Link>
+          </div>
+
           {/* CTA buttons */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -141,23 +202,49 @@ export default function Home() {
             </Link>
             <Link
               to="/about"
-              className="w-full sm:w-auto px-7 py-3.5 rounded-full border border-slate-700 text-slate-300 font-semibold text-sm sm:text-base hover:border-slate-500 hover:text-white transition-all flex items-center justify-center space-x-2"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-full border border-indigo-500/30 bg-surface/60 backdrop-blur-md text-slate-200 font-semibold text-sm sm:text-base hover:border-indigo-400/60 hover:bg-surface/90 transition-all flex items-center justify-center space-x-2"
             >
+              <Atom className="w-4 h-4 text-violet-400" />
               <span>Explore Chapter</span>
             </Link>
           </motion.div>
         </div>
 
-        {/* 3D Characters */}
-        <div className="relative w-full max-w-5xl mx-auto mt-6 sm:mt-10 px-4 flex justify-center items-end">
-          <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-violet-600/15 via-indigo-600/10 to-transparent blur-3xl pointer-events-none" />
-          <div className="relative z-10 w-full max-w-3xl">
+        {/* 3D Characters with floating badges */}
+        <div className="relative w-full max-w-6xl mx-auto mt-4 sm:mt-8 px-4 flex justify-center items-end">
+
+          {/* Ambient glow */}
+          <div className="absolute inset-x-12 bottom-0 h-64 bg-gradient-to-t from-violet-600/30 via-indigo-600/20 to-transparent blur-3xl pointer-events-none" />
+
+          {/* Floating pill badges — desktop only */}
+          <div className="absolute top-4 left-4 sm:left-12 z-20 hidden sm:flex items-center space-x-2 px-3.5 py-2 bg-slate-950/80 backdrop-blur-md rounded-2xl border border-lime-500/40 shadow-xl text-xs font-bold text-lime-300 animate-float" style={{ animationDelay: '0s' }}>
+            <Sparkles className="w-4 h-4 text-lime-400 animate-spin" style={{ animationDuration: '6s' }} />
+            <span>+100 Karma Earned</span>
+          </div>
+
+          <div className="absolute top-12 right-4 sm:right-16 z-20 hidden sm:flex items-center space-x-2 px-3.5 py-2 bg-slate-950/80 backdrop-blur-md rounded-2xl border border-violet-500/40 shadow-xl text-xs font-bold text-violet-300 animate-float" style={{ animationDelay: '-2s' }}>
+            <Award className="w-4 h-4 text-violet-400" />
+            <span>Level 4 Domain Unlocked</span>
+          </div>
+
+          <div className="absolute bottom-16 left-6 sm:left-24 z-20 hidden md:flex items-center space-x-2 px-3.5 py-2 bg-slate-950/85 backdrop-blur-md rounded-2xl border border-indigo-500/40 shadow-xl text-xs font-semibold text-white animate-float" style={{ animationDelay: '-4s' }}>
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span>320+ KNP Builders</span>
+          </div>
+
+          <div className="absolute bottom-24 right-6 sm:right-28 z-20 hidden md:flex items-center space-x-2 px-3.5 py-2 bg-slate-950/85 backdrop-blur-md rounded-2xl border border-sky-500/40 shadow-xl text-xs font-semibold text-sky-300 animate-float" style={{ animationDelay: '-1s' }}>
+            <Terminal className="w-4 h-4 text-sky-400" />
+            <span>Peer Code Reviews</span>
+          </div>
+
+          {/* Characters image */}
+          <div className="relative z-10 w-full max-w-4xl hover:scale-[1.01] transition-transform duration-700">
             <img
               src="/mulearn-hero-characters.png"
-              alt="µLearn Student Community"
-              className="w-full h-auto object-contain mix-blend-screen drop-shadow-[0_16px_40px_rgba(124,58,237,0.25)]"
+              alt="µLearn Official Student Community 3D Characters"
+              className="w-full h-auto object-contain mix-blend-screen drop-shadow-[0_20px_50px_rgba(124,58,237,0.3)]"
             />
-            <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
           </div>
         </div>
       </section>
