@@ -55,21 +55,35 @@ export default function Admin() {
 
   // Save changes helper
   const handleSave = (tab: string, updatedData: any) => {
+    let filename = '';
     if (tab === 'about') {
       setAbout(updatedData);
       localStorage.setItem('mulearn_knp_about', JSON.stringify(updatedData, null, 2));
+      filename = 'about.json';
     } else if (tab === 'leaderboard') {
       setLeaderboard(updatedData);
       localStorage.setItem('mulearn_knp_leaderboard', JSON.stringify(updatedData, null, 2));
+      filename = 'leaderboard.json';
     } else if (tab === 'team') {
       setTeam(updatedData);
       localStorage.setItem('mulearn_knp_team', JSON.stringify(updatedData, null, 2));
+      filename = 'team.json';
     } else if (tab === 'events') {
       setEvents(updatedData);
       localStorage.setItem('mulearn_knp_events', JSON.stringify(updatedData, null, 2));
+      filename = 'events.json';
     } else if (tab === 'notices') {
       setNotices(updatedData);
       localStorage.setItem('mulearn_knp_notices', JSON.stringify(updatedData, null, 2));
+      filename = 'notices.json';
+    }
+
+    if (filename) {
+      fetch('/api/save-content', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename, data: updatedData })
+      }).catch(() => {});
     }
   };
 
