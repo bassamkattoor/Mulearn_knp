@@ -119,9 +119,9 @@ export default function Home() {
                 className="relative z-10 flex items-center justify-center transform-gpu"
               >
                 <img
-                  src="/mulearn-logo-transparent.png"
-                  alt="µLearn Logo"
-                  className="h-20 sm:h-36 w-auto object-contain drop-shadow-[0_0_35px_rgba(124,58,237,0.55)]"
+                  src="/mulearn-knp-logo-color.png"
+                  alt="µLearn KNP Logo"
+                  className="h-24 sm:h-44 w-auto object-contain drop-shadow-[0_0_35px_rgba(124,58,237,0.55)]"
                 />
               </motion.div>
             </motion.div>
