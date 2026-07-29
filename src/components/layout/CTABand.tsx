@@ -34,7 +34,7 @@ export default function CTABand({
 
       <div className="relative z-10 max-w-2xl mx-auto space-y-6">
         <div className="flex justify-center">
-          <span className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/25 text-[11px] font-bold uppercase tracking-widest text-violet-300">
+          <span className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-violet-500/10 border border-violet-500/25 text-[11px] font-bold tracking-wider text-violet-300">
             <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
             <span>µLearn KNP • Karunagappally</span>
           </span>

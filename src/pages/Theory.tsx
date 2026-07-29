@@ -192,7 +192,7 @@ export default function Theory() {
                 </div>
                 <p className="text-slate-400 text-sm sm:text-base leading-relaxed">{pillar.description}</p>
                 <div className="pt-1 border-t border-slate-800">
-                  <p className="text-xs text-slate-500 uppercase tracking-widest font-bold mb-1">At µLearn KNP</p>
+                  <p className="text-xs text-slate-400 tracking-wider font-bold mb-1">AT µLEARN KNP</p>
                   <p className="text-slate-300 text-sm leading-relaxed">{pillar.mulearn}</p>
                 </div>
               </div>
