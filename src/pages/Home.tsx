@@ -151,7 +151,7 @@ export default function Home() {
       {/* ══════════════════════════════════════════
           SECTION 2 — HERO CONTENT (scroll-reveal)
       ══════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#06060e] via-[#0b0c1b] to-background pt-8 pb-0">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#05050f] via-[#090915] to-background pt-8 pb-0">
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-5 sm:space-y-7 pb-4">
 
@@ -180,7 +180,7 @@ export default function Home() {
             custom={0.2}
             className="text-lg sm:text-2xl font-display font-semibold text-slate-300 tracking-tight"
           >
-            Build <span className="text-lime-400 font-bold">proof of work.</span> Not certificates.
+            Build <span className="text-lime-400 font-bold">proof of work</span> — not certificates.
           </motion.p>
 
           {/* Description */}
@@ -196,24 +196,6 @@ export default function Home() {
             <span className="text-slate-200 font-medium">College of Engineering Karunagappally</span>.
           </motion.p>
 
-          {/* Theory badge */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
-            custom={0.34}
-            className="flex justify-center"
-          >
-            <Link
-              to="/theory"
-              className="inline-flex items-center space-x-2 px-3.5 py-1.5 sm:px-5 sm:py-2.5 rounded-full bg-gradient-to-r from-indigo-950/80 to-violet-950/80 border border-violet-500/25 text-[10px] sm:text-xs font-medium text-slate-300 hover:border-violet-400/50 transition-all shadow-md"
-            >
-              <Info className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-sky-400 shrink-0" />
-              <span>Backed by Self-Determination Theory — Deci &amp; Ryan</span>
-              <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-indigo-400 shrink-0" />
-            </Link>
-          </motion.div>
 
           {/* CTA buttons */}
           <motion.div
@@ -221,21 +203,24 @@ export default function Home() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.3 }}
-            custom={0.42}
+            custom={0.34}
             className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 pt-2"
           >
+            {/* Primary — full width on mobile */}
             <Link
               to="/join"
-              className="btn-glow w-full sm:w-auto px-7 py-4 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-bold text-base shadow-xl shadow-violet-600/30 flex items-center justify-center space-x-2 pulse-ring"
+              className="btn-glow w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-bold text-sm shadow-xl shadow-violet-600/30 flex items-center justify-center gap-2 pulse-ring"
             >
-              <span>Join µLearn KNP</span>
+              Join µLearn KNP
               <ArrowRight className="w-4 h-4" />
             </Link>
+            {/* Secondary — ghost, smaller, auto-width */}
             <Link
               to="/about"
-              className="w-full sm:w-auto px-7 py-4 rounded-full border border-indigo-500/30 bg-surface/60 backdrop-blur-md text-slate-200 font-semibold text-base hover:border-indigo-400/60 hover:bg-surface/90 transition-all flex items-center justify-center space-x-2"
+              className="text-sm font-medium text-slate-400 hover:text-slate-200 transition-colors flex items-center gap-1.5 py-2"
             >
-              <span>Explore Chapter</span>
+              Explore Chapter
+              <ChevronRight className="w-3.5 h-3.5" />
             </Link>
           </motion.div>
         </div>
@@ -269,14 +254,14 @@ export default function Home() {
             <span>Peer Code Reviews</span>
           </div>
 
-          <div className="relative z-10 w-full max-w-4xl hover:scale-[1.01] transition-transform duration-700">
-            <img
-              src="/mulearn-hero-characters.png"
-              alt="µLearn Official Student Community 3D Characters"
-              className="w-full h-auto object-contain mix-blend-screen drop-shadow-[0_20px_50px_rgba(124,58,237,0.3)]"
-            />
-            <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-background to-transparent pointer-events-none" />
-          </div>
+          {/* Characters float freely — no box */}
+          <img
+            src="/mulearn-hero-characters.png"
+            alt="µLearn Official Student Community 3D Characters"
+            className="relative z-10 w-full max-w-4xl h-auto object-contain mix-blend-screen drop-shadow-[0_20px_60px_rgba(124,58,237,0.35)] hover:scale-[1.01] transition-transform duration-700"
+          />
+          {/* Fade into next section */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/60 to-transparent pointer-events-none z-20" />
         </motion.div>
       </section>
 
