@@ -61,111 +61,92 @@ export default function Home() {
       {/* ══════════════════════════════════════════
           SECTION 1 — FULLSCREEN LOGO INTRO
       ══════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#04040c] via-[#08091a] to-[#06060e]">
+      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#05050f]">
 
-        {/* Background — large slow blobs */}
+        {/* Asymmetric depth glow — left dominant, right softer */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="mesh-gradient w-[500px] h-[500px] sm:w-[900px] sm:h-[900px] bg-violet-700/25 top-[-200px] left-[-200px]" style={{ animationDelay: '0s' }} />
-          <div className="mesh-gradient w-[400px] h-[400px] sm:w-[700px] sm:h-[700px] bg-indigo-600/15 bottom-[-100px] right-[-150px]" style={{ animationDelay: '-5s' }} />
+          <div className="absolute top-[-10%] left-[-15%] w-[70vw] h-[70vw] max-w-[600px] max-h-[600px] bg-violet-700/30 rounded-full blur-[120px]" />
+          <div className="absolute top-[5%] right-[-10%] w-[50vw] h-[50vw] max-w-[420px] max-h-[420px] bg-indigo-600/15 rounded-full blur-[100px]" />
+          <div className="absolute bottom-[-5%] left-[20%] w-[40vw] h-[40vw] max-w-[300px] max-h-[300px] bg-violet-900/20 rounded-full blur-[90px]" />
         </div>
 
-        {/* Subtle grid */}
+        {/* Very subtle grid */}
         <div
-          className="absolute inset-0 pointer-events-none opacity-20"
+          className="absolute inset-0 pointer-events-none opacity-[0.07]"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(124,58,237,0.10) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(124,58,237,0.10) 1px, transparent 1px)
+              linear-gradient(rgba(124,58,237,1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(124,58,237,1) 1px, transparent 1px)
             `,
-            backgroundSize: '56px 56px',
+            backgroundSize: '60px 60px',
           }}
         />
 
-        {/* ── Logo ── */}
+        {/* ── Centered logo stack ── */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-10 flex flex-col items-center gap-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+          className="relative z-10 flex flex-col items-center gap-5"
         >
-          {/* Rotating aura + orbiting widgets + logo */}
-          <div className="relative flex items-center justify-center">
-            {/* Rotating multi-colour aura */}
-            <motion.div
-              animate={{
-                rotate: [0, 360],
-                scale: [1, 1.12, 1],
-                opacity: [0.45, 0.8, 0.45],
-              }}
-              transition={{
-                rotate: { duration: 14, repeat: Infinity, ease: 'linear' },
-                scale: { duration: 5, repeat: Infinity, ease: 'easeInOut' },
-                opacity: { duration: 5, repeat: Infinity, ease: 'easeInOut' },
-              }}
-              className="absolute w-72 h-72 sm:w-[480px] sm:h-[480px] bg-gradient-to-r from-purple-600 via-cyan-400 via-indigo-500 to-lime-400 rounded-full blur-2xl sm:blur-3xl pointer-events-none"
-            />
-
-            {/* Orbiting Sparkle — top right */}
-            <motion.div
-              animate={{ x: [0, 14, 0, -14, 0], y: [0, -10, 0, 10, 0], scale: [0.8, 1.2, 0.8] }}
-              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 z-30 p-2 sm:p-2.5 bg-slate-950/90 rounded-full border border-lime-400/70 shadow-lg text-lime-400"
-            >
-              <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 animate-pulse" />
-            </motion.div>
-
-            {/* Orbiting Atom — bottom left */}
-            <motion.div
-              animate={{ x: [0, -16, 0, 16, 0], y: [0, 10, 0, -10, 0], scale: [1, 0.8, 1] }}
-              transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute -bottom-3 -left-4 sm:-bottom-5 sm:-left-5 z-30 p-2 sm:p-2.5 bg-slate-950/90 rounded-full border border-cyan-400/70 shadow-lg text-cyan-400"
-            >
-              <Atom className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-            </motion.div>
-
-            {/* Logo */}
-            <motion.img
+          {/* Logo — dominant */}
+          <motion.div
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
+            className="relative"
+          >
+            {/* Soft halo directly behind logo */}
+            <div className="absolute inset-0 -m-8 bg-violet-600/20 rounded-full blur-3xl pointer-events-none" />
+            <img
               src="/mulearn-knp-logo-color.png"
               alt="µLearn KNP"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-              className="relative z-10 h-40 sm:h-60 lg:h-72 w-auto object-contain drop-shadow-[0_0_60px_rgba(124,58,237,0.75)]"
+              className="relative z-10 w-[72vw] max-w-[360px] sm:max-w-[420px] lg:max-w-[500px] h-auto object-contain drop-shadow-[0_0_40px_rgba(124,58,237,0.6)]"
             />
-          </div>
+          </motion.div>
 
-          {/* Chapter badge — below logo */}
+          {/* Subtitle — small caps, airy tracking */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.35em] text-slate-400 text-center"
+          >
+            Campus Chapter &nbsp;·&nbsp; CE Karunagappally
+          </motion.p>
+
+          {/* Chapter badge pill */}
           <motion.a
             href="https://mulearn.org"
             target="_blank"
             rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.8 }}
-            className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-indigo-950/70 border border-indigo-500/30 text-[11px] sm:text-xs font-medium text-indigo-200 hover:border-indigo-400/50 transition-all group"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] border border-white/10 text-[11px] sm:text-xs font-medium text-slate-300 hover:border-indigo-500/40 hover:text-white transition-all group backdrop-blur-sm"
           >
-            <span className="w-2 h-2 rounded-full bg-lime-400 animate-pulse" />
-            <span className="sm:hidden">µLearn KNP • CE Karunagappally</span>
-            <span className="hidden sm:inline">µLearn KNP Campus Chapter • CE Karunagappally</span>
-            <ChevronRight className="w-3.5 h-3.5 text-indigo-400 group-hover:translate-x-0.5 transition-transform" />
+            <span className="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse shrink-0" />
+            µLearn KNP · Official Campus Chapter
+            <ChevronRight className="w-3 h-3 text-slate-500 group-hover:translate-x-0.5 transition-transform shrink-0" />
           </motion.a>
-        </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.4 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-1 text-slate-500 z-10"
-        >
-          <span className="text-[10px] font-medium uppercase tracking-widest">scroll</span>
+          {/* Scroll indicator — close to content, not floating at bottom */}
           <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.6 }}
+            className="flex flex-col items-center gap-1.5 mt-8 text-slate-600"
           >
-            <ChevronDown className="w-4 h-4" />
+            <span className="text-[9px] font-semibold uppercase tracking-[0.3em]">scroll</span>
+            <motion.div
+              animate={{ y: [0, 5, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              <ChevronDown className="w-4 h-4" />
+            </motion.div>
           </motion.div>
         </motion.div>
       </section>
+
 
       {/* ══════════════════════════════════════════
           SECTION 2 — HERO CONTENT (scroll-reveal)
