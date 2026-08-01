@@ -86,10 +86,11 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-10 flex flex-col items-center"
+          className="relative z-10 flex flex-col items-center gap-6"
         >
-          {/* Rotating multi-colour aura */}
+          {/* Rotating aura + orbiting widgets + logo */}
           <div className="relative flex items-center justify-center">
+            {/* Rotating multi-colour aura */}
             <motion.div
               animate={{
                 rotate: [0, 360],
@@ -104,53 +105,52 @@ export default function Home() {
               className="absolute w-72 h-72 sm:w-[480px] sm:h-[480px] bg-gradient-to-r from-purple-600 via-cyan-400 via-indigo-500 to-lime-400 rounded-full blur-2xl sm:blur-3xl pointer-events-none"
             />
 
-            {/* Floating stat chip — top left */}
+            {/* Orbiting Sparkle — top right */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
-              className="absolute -top-6 -left-8 sm:-top-8 sm:-left-20 z-20 flex items-center space-x-1.5 px-3 py-1.5 bg-slate-950/80 backdrop-blur-md rounded-full border border-lime-500/40 text-[10px] sm:text-xs font-bold text-lime-300 animate-float shadow-lg"
-              style={{ animationDelay: '0s' }}
+              animate={{ x: [0, 14, 0, -14, 0], y: [0, -10, 0, 10, 0], scale: [0.8, 1.2, 0.8] }}
+              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 z-30 p-2 sm:p-2.5 bg-slate-950/90 rounded-full border border-lime-400/70 shadow-lg text-lime-400"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse" />
-              <span>320+ Builders</span>
+              <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 animate-pulse" />
             </motion.div>
 
-            {/* Floating stat chip — top right */}
+            {/* Orbiting Atom — bottom left */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
-              className="absolute -top-2 -right-6 sm:-top-6 sm:-right-20 z-20 flex items-center space-x-1.5 px-3 py-1.5 bg-slate-950/80 backdrop-blur-md rounded-full border border-violet-500/40 text-[10px] sm:text-xs font-bold text-violet-300 animate-float shadow-lg"
-              style={{ animationDelay: '-2s' }}
+              animate={{ x: [0, -16, 0, 16, 0], y: [0, 10, 0, -10, 0], scale: [1, 0.8, 1] }}
+              transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute -bottom-3 -left-4 sm:-bottom-5 sm:-left-5 z-30 p-2 sm:p-2.5 bg-slate-950/90 rounded-full border border-cyan-400/70 shadow-lg text-cyan-400"
             >
-              <Sparkles className="w-3 h-3 text-violet-400" />
-              <span>Karma Gamified</span>
+              <Atom className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </motion.div>
 
-            {/* Floating stat chip — bottom */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.4 }}
-              className="absolute -bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center space-x-1.5 px-3 py-1.5 bg-slate-950/80 backdrop-blur-md rounded-full border border-indigo-500/40 text-[10px] sm:text-xs font-semibold text-indigo-200 animate-float shadow-lg"
-              style={{ animationDelay: '-4s' }}
-            >
-              <span>📍 CE Karunagappally</span>
-            </motion.div>
-
-            {/* Logo image */}
+            {/* Logo */}
             <motion.img
               src="/mulearn-knp-logo-color.png"
               alt="µLearn KNP"
-              animate={{ y: [0, -12, 0] }}
+              animate={{ y: [0, -10, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
               className="relative z-10 h-40 sm:h-60 lg:h-72 w-auto object-contain drop-shadow-[0_0_60px_rgba(124,58,237,0.75)]"
             />
           </div>
+
+          {/* Chapter badge — below logo */}
+          <motion.a
+            href="https://mulearn.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.8 }}
+            className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-indigo-950/70 border border-indigo-500/30 text-[11px] sm:text-xs font-medium text-indigo-200 hover:border-indigo-400/50 transition-all group"
+          >
+            <span className="w-2 h-2 rounded-full bg-lime-400 animate-pulse" />
+            <span className="sm:hidden">µLearn KNP • CE Karunagappally</span>
+            <span className="hidden sm:inline">µLearn KNP Campus Chapter • CE Karunagappally</span>
+            <ChevronRight className="w-3.5 h-3.5 text-indigo-400 group-hover:translate-x-0.5 transition-transform" />
+          </motion.a>
         </motion.div>
 
-        {/* ── Scroll indicator ── */}
+        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -170,35 +170,12 @@ export default function Home() {
       {/* ══════════════════════════════════════════
           SECTION 2 — HERO CONTENT (scroll-reveal)
       ══════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#06060e] via-[#0b0c1b] to-background pt-20 pb-0">
-
-        {/* Background blobs for hero content */}
-        <div className="mesh-gradient w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-violet-700/15 top-[-80px] left-[-100px]" style={{ animationDelay: '-2s' }} />
-        <div className="mesh-gradient w-[250px] h-[250px] sm:w-[500px] sm:h-[500px] bg-blue-600/10 top-[60px] right-[-100px]" style={{ animationDelay: '-6s' }} />
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#06060e] via-[#0b0c1b] to-background pt-8 pb-0">
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-5 sm:space-y-7 pb-4">
 
           {/* Chapter badge */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
-            custom={0}
-            className="flex justify-center"
-          >
-            <a
-              href="https://mulearn.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-indigo-950/70 border border-indigo-500/25 text-[11px] sm:text-xs font-medium text-indigo-200 hover:border-indigo-400/50 transition-all group"
-            >
-              <span className="w-2 h-2 rounded-full bg-lime-400 animate-pulse" />
-              <span className="sm:hidden">µLearn KNP • CE Karunagappally</span>
-              <span className="hidden sm:inline">µLearn KNP Campus Chapter • CE Karunagappally</span>
-              <ChevronRight className="w-3.5 h-3.5 text-indigo-400 group-hover:translate-x-0.5 transition-transform" />
-            </a>
-          </motion.div>
+
 
           {/* Headline */}
           <motion.h1
