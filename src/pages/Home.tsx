@@ -121,7 +121,7 @@ export default function Home() {
                 <img
                   src="/mulearn-knp-logo-color.png"
                   alt="µLearn KNP Logo"
-                  className="h-24 sm:h-44 w-auto object-contain drop-shadow-[0_0_35px_rgba(124,58,237,0.55)]"
+                  className="h-40 sm:h-56 w-auto object-contain drop-shadow-[0_0_35px_rgba(124,58,237,0.55)]"
                 />
               </motion.div>
             </motion.div>

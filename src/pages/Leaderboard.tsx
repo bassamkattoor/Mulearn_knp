@@ -8,12 +8,20 @@ import { Flame, Info, Trophy } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export default function Leaderboard() {
-  const [entries, setEntries] = useState<LeaderboardEntry[]>(leaderboardData as LeaderboardEntry[]);
+  // Sort by karma descending and reassign ranks 1, 2, 3...
+  const sortAndRank = (data: LeaderboardEntry[]): LeaderboardEntry[] =>
+    [...data]
+      .sort((a, b) => b.karma - a.karma)
+      .map((e, i) => ({ ...e, rank: i + 1 }));
+
+  const [entries, setEntries] = useState<LeaderboardEntry[]>(
+    sortAndRank(leaderboardData as LeaderboardEntry[])
+  );
 
   useEffect(() => {
     const localData = localStorage.getItem('mulearn_knp_leaderboard');
     if (localData) {
-      setEntries(JSON.parse(localData));
+      setEntries(sortAndRank(JSON.parse(localData)));
     }
   }, []);
 
