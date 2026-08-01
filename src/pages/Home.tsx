@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   ArrowRight, Flame, Users, Compass, Award, Zap,
-  ChevronRight, ChevronDown, Sparkles, Terminal, Info,
+  ChevronRight, ChevronDown, Sparkles, Atom, Terminal, Info,
 } from 'lucide-react';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
