@@ -124,10 +124,9 @@ export default function Execom() {
                 Chapter Leadership
               </span>
               <h2 className="text-2xl sm:text-3xl font-display font-black text-white">Executive Committee</h2>
-              <p className="text-sm text-slate-500 max-w-md">Click any card to read their story. Hover to see the magic.</p>
             </div>
 
-            <div className="grid grid-cols-3 gap-5 sm:gap-6 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 max-w-5xl mx-auto">
               {studentLeads.map(m => <MemberCard key={m.id} member={m} />)}
             </div>
           </section>

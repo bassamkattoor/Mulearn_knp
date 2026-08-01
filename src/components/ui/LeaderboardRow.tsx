@@ -1,4 +1,4 @@
-import { Trophy, TrendingUp, TrendingDown, Minus } from 'lucide-react';
+import { Trophy } from 'lucide-react';
 import type { LeaderboardEntry } from '../../types';
 
 interface LeaderboardRowProps {
@@ -51,25 +51,6 @@ export default function LeaderboardRow({ entry }: LeaderboardRowProps) {
         </p>
       </div>
 
-      {/* Rank Change */}
-      <div className="hidden sm:flex items-center space-x-1 text-xs">
-        {entry.rankChange > 0 ? (
-          <span className="flex items-center space-x-1 text-lime-400 bg-lime-400/10 px-2 py-1 rounded-full border border-lime-400/20">
-            <TrendingUp className="w-3 h-3" />
-            <span>+{entry.rankChange}</span>
-          </span>
-        ) : entry.rankChange < 0 ? (
-          <span className="flex items-center space-x-1 text-red-400 bg-red-400/10 px-2 py-1 rounded-full border border-red-400/20">
-            <TrendingDown className="w-3 h-3" />
-            <span>{entry.rankChange}</span>
-          </span>
-        ) : (
-          <span className="flex items-center space-x-1 text-slate-500 bg-slate-800/60 px-2 py-1 rounded-full border border-slate-700/60">
-            <Minus className="w-3 h-3" />
-            <span>—</span>
-          </span>
-        )}
-      </div>
 
       {/* Karma */}
       <div className="shrink-0 text-right">

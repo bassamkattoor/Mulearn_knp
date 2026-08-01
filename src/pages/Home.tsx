@@ -93,16 +93,51 @@ export default function Home() {
             <motion.div
               animate={{
                 rotate: [0, 360],
-                scale: [1, 1.1, 1],
-                opacity: [0.5, 0.85, 0.5],
+                scale: [1, 1.12, 1],
+                opacity: [0.45, 0.8, 0.45],
               }}
               transition={{
                 rotate: { duration: 14, repeat: Infinity, ease: 'linear' },
                 scale: { duration: 5, repeat: Infinity, ease: 'easeInOut' },
                 opacity: { duration: 5, repeat: Infinity, ease: 'easeInOut' },
               }}
-              className="absolute w-56 h-56 sm:w-96 sm:h-96 bg-gradient-to-r from-purple-600 via-cyan-400 via-indigo-500 to-lime-400 rounded-full blur-2xl sm:blur-3xl pointer-events-none"
+              className="absolute w-72 h-72 sm:w-[480px] sm:h-[480px] bg-gradient-to-r from-purple-600 via-cyan-400 via-indigo-500 to-lime-400 rounded-full blur-2xl sm:blur-3xl pointer-events-none"
             />
+
+            {/* Floating stat chip — top left */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+              className="absolute -top-6 -left-8 sm:-top-8 sm:-left-20 z-20 flex items-center space-x-1.5 px-3 py-1.5 bg-slate-950/80 backdrop-blur-md rounded-full border border-lime-500/40 text-[10px] sm:text-xs font-bold text-lime-300 animate-float shadow-lg"
+              style={{ animationDelay: '0s' }}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse" />
+              <span>320+ Builders</span>
+            </motion.div>
+
+            {/* Floating stat chip — top right */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+              className="absolute -top-2 -right-6 sm:-top-6 sm:-right-20 z-20 flex items-center space-x-1.5 px-3 py-1.5 bg-slate-950/80 backdrop-blur-md rounded-full border border-violet-500/40 text-[10px] sm:text-xs font-bold text-violet-300 animate-float shadow-lg"
+              style={{ animationDelay: '-2s' }}
+            >
+              <Sparkles className="w-3 h-3 text-violet-400" />
+              <span>Karma Gamified</span>
+            </motion.div>
+
+            {/* Floating stat chip — bottom */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.4 }}
+              className="absolute -bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center space-x-1.5 px-3 py-1.5 bg-slate-950/80 backdrop-blur-md rounded-full border border-indigo-500/40 text-[10px] sm:text-xs font-semibold text-indigo-200 animate-float shadow-lg"
+              style={{ animationDelay: '-4s' }}
+            >
+              <span>📍 CE Karunagappally</span>
+            </motion.div>
 
             {/* Logo image */}
             <motion.img
@@ -110,19 +145,9 @@ export default function Home() {
               alt="µLearn KNP"
               animate={{ y: [0, -12, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-              className="relative z-10 h-32 sm:h-52 lg:h-64 w-auto object-contain drop-shadow-[0_0_50px_rgba(124,58,237,0.7)]"
+              className="relative z-10 h-40 sm:h-60 lg:h-72 w-auto object-contain drop-shadow-[0_0_60px_rgba(124,58,237,0.75)]"
             />
           </div>
-
-          {/* "KNP" subtitle beneath logo */}
-          <motion.p
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-4 text-xs sm:text-sm font-display font-bold uppercase tracking-[0.3em] text-slate-400"
-          >
-            Campus Chapter · CE Karunagappally
-          </motion.p>
         </motion.div>
 
         {/* ── Scroll indicator ── */}
