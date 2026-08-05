@@ -1,5 +1,6 @@
 import { Trophy } from 'lucide-react';
 import type { LeaderboardEntry } from '../../types';
+import IKImage from './IKImage';
 
 interface LeaderboardRowProps {
   entry: LeaderboardEntry;
@@ -25,10 +26,12 @@ export default function LeaderboardRow({ entry }: LeaderboardRowProps) {
       </div>
 
       {/* Avatar */}
-      <img
+      <IKImage
         src={entry.avatar}
         alt={entry.name}
         className="w-10 h-10 rounded-full border-2 border-slate-700 group-hover:border-violet-500/50 transition-all shrink-0 object-cover"
+        width={80}
+        height={80}
       />
 
       {/* Name & Level */}

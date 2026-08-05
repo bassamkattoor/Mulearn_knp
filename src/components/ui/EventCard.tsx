@@ -1,5 +1,6 @@
 import { MapPin, ArrowRight, Clock, Play } from 'lucide-react';
 import type { Event } from '../../types';
+import IKImage from './IKImage';
 
 interface EventCardProps {
   event: Event;
@@ -16,10 +17,12 @@ export default function EventCard({ event, variant }: EventCardProps) {
     <div className="glass-card rounded-2xl overflow-hidden group relative">
       {/* Banner Image */}
       <div className="relative h-48 overflow-hidden">
-        <img
+        <IKImage
           src={event.image}
           alt={event.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          width={600}
+          height={192}
         />
         {/* Dark overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#06060e] via-[#06060e]/40 to-transparent" />

@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import { ImageKitProvider } from '@imagekit/react';
 import ScrollToTop from './components/layout/ScrollToTop';
 import PageTransition from './components/layout/PageTransition';
 import Home from './pages/Home';
@@ -11,6 +12,7 @@ import Leaderboard from './pages/Leaderboard';
 import Join from './pages/Join';
 import Theory from './pages/Theory';
 import Admin from './pages/Admin';
+import { IK_URL } from './lib/imagekit';
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -34,13 +36,15 @@ function AnimatedRoutes() {
 
 export default function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-background text-textMain font-sans flex flex-col justify-between">
-        <ScrollToTop />
-        <main className="flex-grow">
-          <AnimatedRoutes />
-        </main>
-      </div>
-    </Router>
+    <ImageKitProvider urlEndpoint={IK_URL}>
+      <Router>
+        <div className="min-h-screen bg-background text-textMain font-sans flex flex-col justify-between">
+          <ScrollToTop />
+          <main className="flex-grow">
+            <AnimatedRoutes />
+          </main>
+        </div>
+      </Router>
+    </ImageKitProvider>
   );
 }

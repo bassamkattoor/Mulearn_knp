@@ -4,6 +4,7 @@ import {
   ArrowRight, Flame, Users, Compass, Award, Zap,
   ChevronRight, ChevronDown, Sparkles, Atom, Terminal, Info,
 } from 'lucide-react';
+import IKImage from '../components/ui/IKImage';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import SectionHeader from '../components/layout/SectionHeader';
@@ -97,10 +98,12 @@ export default function Home() {
           >
             {/* Soft halo directly behind logo */}
             <div className="absolute inset-0 -m-8 bg-violet-600/20 rounded-full blur-3xl pointer-events-none" />
-            <img
-              src="/mulearn-knp-logo-color.png"
+            <IKImage
+              src="/site/mulearn-knp-logo-color.png"
               alt="µLearn KNP"
               className="relative z-10 w-[72vw] max-w-[360px] sm:max-w-[420px] lg:max-w-[500px] h-auto object-contain drop-shadow-[0_0_40px_rgba(124,58,237,0.6)]"
+              width={500}
+              quality={90}
             />
           </motion.div>
 
@@ -255,10 +258,11 @@ export default function Home() {
           </div>
 
           {/* Characters float freely — no box */}
-          <img
-            src="/mulearn-hero-characters.png"
+          <IKImage
+            src="/site/mulearn-hero-characters.png"
             alt="µLearn Official Student Community 3D Characters"
             className="relative z-10 w-full max-w-4xl h-auto object-contain mix-blend-screen drop-shadow-[0_20px_60px_rgba(124,58,237,0.35)] hover:scale-[1.01] transition-transform duration-700"
+            width={900}
           />
           {/* Fade into next section */}
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/60 to-transparent pointer-events-none z-20" />

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, LogIn, Sparkles } from 'lucide-react';
+import IKImage from '../ui/IKImage';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,10 +26,11 @@ export default function Navbar() {
 
           {/* Official µLearn OG Logo Container */}
           <Link to="/" className="flex items-center">
-            <img
-              src="/mulearn-knp-logo-white.png"
+            <IKImage
+              src="/site/mulearn-knp-logo-white.png"
               alt="µLearn KNP"
               className="h-10 sm:h-24 w-auto object-contain"
+              width={200}
             />
           </Link>
 

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { ExternalLink, GitBranch, Link, Globe } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import type { Member } from '../../types';
+import IKImage from './IKImage';
 
 interface MemberCardProps {
   member: Member;
@@ -71,11 +73,12 @@ export default function MemberCard({ member }: MemberCardProps) {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent z-10 pointer-events-none" />
 
         {hasSvg ? (
-          <img
+          <IKImage
             src={member.image}
             alt={member.name}
             className="absolute inset-0 w-full h-full object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.04]"
-            style={{ filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.6))' }}
+            width={400}
+            quality={85}
           />
         ) : (
           <InitialsPlaceholder name={member.name} accent={accent} />
