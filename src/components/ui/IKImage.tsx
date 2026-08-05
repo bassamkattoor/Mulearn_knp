@@ -1,10 +1,11 @@
 import { Image } from '@imagekit/react';
+import { useState } from 'react';
 import { IK_URL } from '../../lib/imagekit';
 
 interface IKImageProps {
   /**
    * Path in ImageKit media library, e.g. "/site/logo.png"
-   * OR a full external URL (e.g. Unsplash) — passed through unchanged.
+   * OR a full external URL — passed through as plain <img>.
    */
   src: string;
   alt: string;
@@ -13,16 +14,15 @@ interface IKImageProps {
   height?: number;
   /** Quality 1-100, default 80 */
   quality?: number;
+  style?: React.CSSProperties;
 }
 
 /**
- * Drop-in <img> replacement that:
- * - Serves images from ImageKit CDN
- * - Auto-converts to WebP / AVIF
- * - Generates responsive srcSet automatically
- * - Lazy loads by default
- *
- * If `src` is an absolute URL (e.g. Unsplash), it falls back to a plain <img>.
+ * Drop-in <img> replacement backed by ImageKit CDN.
+ * - Auto WebP / AVIF conversion
+ * - Responsive srcSet
+ * - Lazy loading
+ * - Falls back to local path on ImageKit 404 (useful during migration)
  */
 export default function IKImage({
   src,
@@ -31,19 +31,47 @@ export default function IKImage({
   width,
   height,
   quality = 80,
+  style,
 }: IKImageProps) {
-  // External URL — plain img fallback
-  if (src.startsWith('http')) {
-    return <img src={src} alt={alt} className={className} width={width} height={height} loading="lazy" />;
+  const [failed, setFailed] = useState(false);
+
+  // External URL or empty — plain img
+  if (!src || src.startsWith('http')) {
+    return (
+      <img
+        src={src}
+        alt={alt}
+        className={className}
+        width={width}
+        height={height}
+        style={style}
+        loading="lazy"
+      />
+    );
   }
 
-  // Empty src — nothing to render
-  if (!src) return null;
+  // Derive local fallback path (strip the ImageKit folder prefix)
+  // e.g. "/site/logo.png" → "/logo.png",  "/execom/LEAD.png" → "/execom/LEAD.png"
+  const localFallback = src.replace(/^\/site\//, '/').replace(/^\/mulearn-knp\/site\//, '/');
 
-  const transformation = [
-    { quality: String(quality) },
-    ...(width ? [{ width: String(width) }] : []),
-    ...(height ? [{ height: String(height) }] : []),
+  if (failed) {
+    return (
+      <img
+        src={localFallback}
+        alt={alt}
+        className={className}
+        width={width}
+        height={height}
+        style={style}
+        loading="lazy"
+      />
+    );
+  }
+
+  const transformation: { quality?: number; width?: number; height?: number }[] = [
+    { quality },
+    ...(width ? [{ width }] : []),
+    ...(height ? [{ height }] : []),
   ];
 
   return (
@@ -54,8 +82,10 @@ export default function IKImage({
       className={className}
       width={width}
       height={height}
+      style={style}
       transformation={transformation}
       loading="lazy"
+      onError={() => setFailed(true)}
     />
   );
 }
